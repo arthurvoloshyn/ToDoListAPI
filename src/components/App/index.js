@@ -5,7 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
-import ROUTERS from '../../constants/routes';
+import ROUTES from '../../constants/routes';
 import styles from './styles';
 
 const App = () => (
@@ -20,7 +20,7 @@ const App = () => (
         <Grid item xs={11} md={8} lg={4}>
           <TodosProvider>
             <Switch>
-              {ROUTERS.map(({ id, exact, path, component: Component }) => (
+              {ROUTES.map(({ id, exact, path, component: Component }) => (
                 <Route key={id} exact={exact} path={path}>
                   <Component />
                 </Route>

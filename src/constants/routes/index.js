@@ -1,7 +1,7 @@
 import Home from '../../components/Home';
 import NoMatch from '../../components/NoMatch';
 
-const ROUTERS = [
+const ROUTES = [
   {
     id: 'Home',
     exact: true,
@@ -28,4 +28,4 @@ const ROUTERS = [
   },
 ];
 
-export default ROUTERS;
+export default ROUTES;
