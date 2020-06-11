@@ -12,7 +12,7 @@ const TodoForm = () => {
 
   const onSubmit = event => {
     event.preventDefault();
-    dispatch({ type: ACTION_TYPES.ADD, task: value });
+    dispatch({ type: ACTION_TYPES.ADD, task: value, id: new Date().getTime() });
     reset();
   };
 

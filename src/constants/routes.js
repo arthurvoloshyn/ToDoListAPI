@@ -1,5 +1,6 @@
 import Home from '../components/Home';
 import NoMatch from '../components/NoMatch';
+import TodoForm from '../components/TodoForm';
 
 const ROUTES = [
   {
@@ -13,6 +14,12 @@ const ROUTES = [
     exact: true,
     path: '/tasks',
     component: Tasks,
+  },
+  {
+    id: 'New',
+    exact: false,
+    path: '/new',
+    component: TodoForm,
   },
   {
     id: 'Task',
