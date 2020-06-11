@@ -1,27 +1,27 @@
 export const ROUTERS = [
   {
     id: 'Home',
+    exact: true,
     path: '/',
     component: Home,
-    exact: true,
   },
   {
     id: 'Tasks',
+    exact: true,
     path: '/tasks',
     component: Tasks,
-    exact: true,
   },
   {
     id: 'Task',
+    exact: false,
     path: '/tasks/:id',
     component: Task,
-    exact: false,
   },
   {
     id: 'NoMatch',
+    exact: false,
     path: '*',
     component: NoMatch,
-    exact: false,
   },
 ];
 
