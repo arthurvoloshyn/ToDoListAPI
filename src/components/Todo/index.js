@@ -16,7 +16,7 @@ import styles from './styles';
 const Todo = ({ task, completed, id }) => {
   const [isEditing, toggle] = useToggle(false);
   const dispatch = useContext(DispatchContext);
-  const styles = styles.listItemText(completed);
+  const listItemTextStyles = styles.listItemText(completed);
   const tabIndex = -1;
 
   const onToggle = () => dispatch({ type: ACTION_TYPES.TOGGLE, id });
@@ -29,7 +29,7 @@ const Todo = ({ task, completed, id }) => {
       ) : (
         <>
           <Checkbox tabIndex={tabIndex} checked={completed} onClick={onToggle} />
-          <ListItemText style={styles}>{task}</ListItemText>
+          <ListItemText style={listItemTextStyles}>{task}</ListItemText>
           <ListItemSecondaryAction>
             <IconButton aria-label="Delete" onClick={onRemove}>
               <DeleteIcon />
