@@ -5,7 +5,7 @@ import ROUTERS from './constants/router';
 const App = () => (
   <Router>
     <Switch>
-      {ROUTERS.map(({ id, path, exact, component: Component }) => (
+      {ROUTERS.map(({ id, exact, path, component: Component }) => (
         <Route key={id} path={path} exact={exact}>
           <Component />
         </Route>

@@ -1,4 +1,4 @@
-export const ROUTERS = [
+const ROUTERS = [
   {
     id: 'Home',
     exact: true,
