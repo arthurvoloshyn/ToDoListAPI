@@ -1,4 +1,5 @@
-import React, { useContext, Fragment } from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
@@ -15,10 +16,10 @@ const TodoList = () => {
     <Paper>
       <List>
         {todos.map((todo, i) => (
-          <Fragment key={todo.id}>
+          <Link key={todo.id} to={`/tasks/${todo.id}`}>
             <Todo {...todo} />
             {i < todosLength && <Divider />}
-          </Fragment>
+          </Link>
         ))}
       </List>
     </Paper>
