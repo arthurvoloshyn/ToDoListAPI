@@ -6,6 +6,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
 import ROUTES from '../../constants/routes';
+import { TodosProvider } from '../../contexts/todos';
 import styles from './styles';
 
 const App = () => (
