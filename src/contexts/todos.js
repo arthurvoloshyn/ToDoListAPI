@@ -8,16 +8,16 @@ const defaultTodos = [
   { id: 2, task: 'Release lady bugs into garden', completed: true },
 ];
 
-export const Todos = createContext();
+export const TodosContext = createContext();
 export const DispatchContext = createContext();
 
 export const TodosProvider = ({ children }) => {
   const [todos, dispatch] = useLocalStorageReducer('todos', defaultTodos, tasks);
 
   return (
-    <Todos.Provider value={todos}>
+    <TodosContext.Provider value={todos}>
       <DispatchContext.Provider value={dispatch}>{children}</DispatchContext.Provider>
-    </Todos.Provider>
+    </TodosContext.Provider>
   );
 };
 
