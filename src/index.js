@@ -1,8 +1,7 @@
 import React, { StrictMode } from 'react';
 import { render } from 'react-dom';
 import * as serviceWorker from './serviceWorker';
-import App from './App';
-import 'antd/dist/antd.css';
+import App from './components/App';
 import ErrorBoundary from './components/ErrorBoundary';
 
 render(

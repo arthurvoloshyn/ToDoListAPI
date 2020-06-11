@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Divider } from 'antd';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 
 const ErrorIndicator = ({ children }) => (
-  <div>
-    <Divider>Something went wrong!</Divider>
+  <Paper>
+    <Typography color="inherit"> Something went wrong! </Typography>
     {children}
-  </div>
+  </Paper>
 );
 
 ErrorIndicator.propTypes = {

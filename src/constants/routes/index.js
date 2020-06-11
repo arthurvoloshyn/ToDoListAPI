@@ -1,3 +1,6 @@
+import Home from '../../components/Home';
+import NoMatch from '../../components/NoMatch';
+
 const ROUTERS = [
   {
     id: 'Home',
