@@ -3,7 +3,7 @@
     "prettier --write",
     "git add"
   ],
-  "**/*.+(js|jsx|ts|tsx)": [
+  "**/*.+(jsx|ts|tsx)": [
     "eslint --fix --max-warnings=0",
     "git add"
   ],
