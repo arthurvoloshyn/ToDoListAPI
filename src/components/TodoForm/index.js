@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
-import Paper from '@material-ui/core/Paper';
-import TextField from '@material-ui/core/TextField';
+import { Paper, TextField } from '@material-ui/core';
 import ACTION_TYPES from '../../constants/actionTypes';
 import useInputState from '../../hooks/useInputState';
 import { DispatchContext } from '../../contexts/todos';

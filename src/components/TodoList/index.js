@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import Paper from '@material-ui/core/Paper';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
+import { Paper, List, Divider } from '@material-ui/core';
 import { TodosContext } from '../../contexts/todos';
 import Todo from '../Todo';
 

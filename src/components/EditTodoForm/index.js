@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import propTypes from 'prop-types';
-import TextField from '@material-ui/core/TextField';
+import { TextField } from '@material-ui/core';
 import ACTION_TYPES from '../../constants/actionTypes';
 import useInputState from '../../hooks/useInputState';
 import { DispatchContext } from '../../contexts/todos';

@@ -1,10 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Grid from '@material-ui/core/Grid';
+import { Typography, Paper, AppBar, Toolbar, Grid } from '@material-ui/core';
 import ROUTES from '../../constants/routes';
 import { TodosProvider } from '../../contexts/todos';
 import styles from './styles';
