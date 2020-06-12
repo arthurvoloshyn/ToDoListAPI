@@ -1,7 +1,7 @@
 import Home from '../components/Home';
-import TodoList from '../components/TodoList';
+import Todo from '../components/Todo';
 import TodoForm from '../components/TodoForm';
-import Todo from '../components/TodoItem';
+import TodoItem from '../components/TodoItem';
 import EditTodoForm from '../components/EditTodoForm';
 import NoMatch from '../components/NoMatch';
 
@@ -16,7 +16,7 @@ const ROUTES = [
     id: 'Tasks',
     exact: true,
     path: '/tasks',
-    component: TodoList,
+    component: Todo,
   },
   {
     id: 'New',
@@ -28,7 +28,7 @@ const ROUTES = [
     id: 'Task',
     exact: true,
     path: '/tasks/:id',
-    component: Todo,
+    component: TodoItem,
   },
   {
     id: 'Edit',
