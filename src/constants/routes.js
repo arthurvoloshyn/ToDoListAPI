@@ -1,7 +1,7 @@
 import Home from '../components/Home';
 import TodoList from '../components/TodoList';
 import TodoForm from '../components/TodoForm';
-import Todo from '../components/Todo';
+import Todo from '../components/TodoItem';
 import EditTodoForm from '../components/EditTodoForm';
 import NoMatch from '../components/NoMatch';
 

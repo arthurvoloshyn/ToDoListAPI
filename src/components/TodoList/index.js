@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Paper, List, Divider } from '@material-ui/core';
 import { TodosContext } from '../../contexts/todos';
-import Todo from '../Todo';
+import TodoItem from '../TodoItem';
 
 const TodoList = () => {
   const todos = useContext(TodosContext);
@@ -15,7 +15,7 @@ const TodoList = () => {
       <List>
         {todos.map((todo, i) => (
           <Link key={todo.id} to={`/tasks/${todo.id}`}>
-            <Todo {...todo} />
+            <TodoItem {...todo} />
             {i < todosLength && <Divider />}
           </Link>
         ))}

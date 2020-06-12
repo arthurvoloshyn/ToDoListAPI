@@ -14,7 +14,7 @@ import useToggle from '../../hooks/useToggle';
 import EditTodoForm from '../EditTodoForm';
 import useStyles from './styles';
 
-const Todo = ({ task, completed, id }) => {
+const TodoItem = ({ task, completed, id }) => {
   const [isEditing, toggle] = useToggle(false);
   const dispatch = useContext(DispatchContext);
   const classes = useStyles(completed);
@@ -46,15 +46,15 @@ const Todo = ({ task, completed, id }) => {
   );
 };
 
-Todo.propTypes = {
+TodoItem.propTypes = {
   id: propTypes.oneOfType([propTypes.number, propTypes.string]).isRequired,
   task: propTypes.string,
   completed: propTypes.bool,
 };
 
-Todo.defaultProps = {
+TodoItem.defaultProps = {
   task: 'New task',
   completed: false,
 };
 
-export default memo(Todo);
+export default memo(TodoItem);
