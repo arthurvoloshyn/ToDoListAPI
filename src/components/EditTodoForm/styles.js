@@ -1,3 +1,5 @@
+import { makeStyles } from '@material-ui/core/styles';
+
 const styles = {
   form: {
     width: '100%',
@@ -8,4 +10,6 @@ const styles = {
   },
 };
 
-export default styles;
+const useStyles = makeStyles(styles);
+
+export default useStyles;

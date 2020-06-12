@@ -1,3 +1,5 @@
+import { makeStyles } from '@material-ui/core/styles';
+
 const styles = {
   paper: {
     margin: '1rem 0',
@@ -5,4 +7,6 @@ const styles = {
   },
 };
 
-export default styles;
+const useStyles = makeStyles(styles);
+
+export default useStyles;

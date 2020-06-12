@@ -1,18 +1,18 @@
+import { makeStyles } from '@material-ui/core/styles';
+
 const styles = {
   listItem: {
     height: '64px',
   },
-  listItemText: completed => {
-    const textDecoration = completed ? 'line-through' : 'none';
-
-    return {
-      textDecoration,
-      whiteSpace: 'nowrap',
-      overflow: 'hidden',
-      textOverflow: 'ellipsis',
-      marginRight: '7rem',
-    };
+  listItemText: {
+    textDecoration: completed => (completed ? 'line-through' : 'none'),
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    marginRight: '7rem',
   },
 };
 
-export default styles;
+const useStyles = makeStyles(styles);
+
+export default useStyles;

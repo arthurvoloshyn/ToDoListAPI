@@ -12,25 +12,26 @@ import ACTION_TYPES from '../../constants/actionTypes';
 import { DispatchContext } from '../../contexts/todos';
 import useToggle from '../../hooks/useToggle';
 import EditTodoForm from '../EditTodoForm';
-import styles from './styles';
+import useStyles from './styles';
 
 const Todo = ({ task, completed, id }) => {
   const [isEditing, toggle] = useToggle(false);
   const dispatch = useContext(DispatchContext);
-  const listItemTextStyles = styles.listItemText(completed);
+  const classes = useStyles(completed);
+  const listItemTextStyles = classes.listItemText;
   const tabIndex = -1;
 
   const onToggle = () => dispatch({ type: ACTION_TYPES.TOGGLE, id });
   const onRemove = () => dispatch({ type: ACTION_TYPES.REMOVE, id });
 
   return (
-    <ListItem style={styles.listItem}>
+    <ListItem className={classes.listItem}>
       {isEditing ? (
         <EditTodoForm id={id} task={task} toggleEditForm={toggle} />
       ) : (
         <>
           <Checkbox tabIndex={tabIndex} checked={completed} onClick={onToggle} />
-          <ListItemText style={listItemTextStyles}>{task}</ListItemText>
+          <ListItemText className={listItemTextStyles}>{task}</ListItemText>
           <ListItemSecondaryAction>
             <IconButton aria-label="Delete" onClick={onRemove}>
               <DeleteIcon />

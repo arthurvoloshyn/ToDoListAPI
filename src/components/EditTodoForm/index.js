@@ -4,11 +4,12 @@ import { TextField } from '@material-ui/core';
 import ACTION_TYPES from '../../constants/actionTypes';
 import useInputState from '../../hooks/useInputState';
 import { DispatchContext } from '../../contexts/todos';
-import styles from './styles';
+import useStyles from './styles';
 
 const EditTodoForm = ({ id, task, toggleEditForm }) => {
   const dispatch = useContext(DispatchContext);
   const [value, handleChange, reset] = useInputState(task);
+  const classes = useStyles();
 
   const onSubmit = event => {
     event.preventDefault();
@@ -18,8 +19,8 @@ const EditTodoForm = ({ id, task, toggleEditForm }) => {
   };
 
   return (
-    <div style={styles.container}>
-      <form onSubmit={onSubmit} style={styles.form}>
+    <div className={classes.container}>
+      <form onSubmit={onSubmit} className={classes.form}>
         <TextField margin="normal" value={value} onChange={handleChange} fullWidth autoFocus />
       </form>
     </div>
