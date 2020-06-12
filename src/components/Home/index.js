@@ -1,13 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Paper, Button } from '@material-ui/core';
+import { Link as RouterLink } from 'react-router-dom';
+import { Button, Link } from '@material-ui/core';
+import useStyles from './styles';
 
-const Home = () => (
-  <Paper>
-    <Button variant="contained" color="primary">
-      <Link to="/tasks">Go to the task list</Link>
-    </Button>
-  </Paper>
-);
+const Home = () => {
+  const classes = useStyles();
+
+  return (
+    <Link component={RouterLink} to="/tasks" className={classes.link}>
+      <Button variant="contained" color="primary" className={classes.button}>
+        Go to the task list
+      </Button>
+    </Link>
+  );
+};
 
 export default Home;

@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Typography, Paper, AppBar, Toolbar, Grid } from '@material-ui/core';
+import { BrowserRouter as Router, Switch, Route, Link as RouterLink } from 'react-router-dom';
+import { Paper, AppBar, Toolbar, Grid, Link } from '@material-ui/core';
 import ROUTES from '../../constants/routes';
 import { TodosProvider } from '../../contexts/todos';
 import useStyles from './styles';
@@ -13,7 +13,9 @@ const App = () => {
       <Paper elevation={0} className={classes.paper}>
         <AppBar color="primary" position="static" className={classes.appBar}>
           <Toolbar>
-            <Typography color="inherit"> ToDo List API </Typography>
+            <Link component={RouterLink} to="/" color="inherit" className={classes.link}>
+              ToDo List API
+            </Link>
           </Toolbar>
         </AppBar>
         <Grid container justify="center" className={classes.grid}>
