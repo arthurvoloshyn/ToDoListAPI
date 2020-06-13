@@ -1,13 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Paper, Typography } from '@material-ui/core';
+import useStyles from './styles';
 
-const ErrorIndicator = ({ children }) => (
-  <Paper>
-    <Typography color="inherit"> Something went wrong! </Typography>
-    {children}
-  </Paper>
-);
+const ErrorIndicator = ({ children }) => {
+  const withChildren = !!children;
+  const classes = useStyles(withChildren);
+
+  return (
+    <Paper className={classes.paper}>
+      <Typography color="inherit" align="center">
+        Something went wrong!
+      </Typography>
+      {children}
+    </Paper>
+  );
+};
 
 ErrorIndicator.propTypes = {
   children: PropTypes.node,
