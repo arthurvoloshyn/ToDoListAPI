@@ -19,7 +19,6 @@ const TodoItem = ({ task, completed, id }) => {
   const dispatch = useContext(DispatchContext);
   const classes = useStyles(completed);
   const listItemTextStyles = classes.listItemText;
-  const tabIndex = -1;
 
   const onToggle = () => dispatch(toggleTask(id));
   const onRemove = () => dispatch(removeTask(id));
@@ -30,7 +29,7 @@ const TodoItem = ({ task, completed, id }) => {
         <EditTodoForm id={id} task={task} toggleEditForm={toggle} />
       ) : (
         <>
-          <Checkbox tabIndex={tabIndex} checked={completed} onClick={onToggle} />
+          <Checkbox checked={completed} onClick={onToggle} />
           <ListItemText className={listItemTextStyles}>{task}</ListItemText>
           <ListItemSecondaryAction>
             <IconButton aria-label="Delete" onClick={onRemove}>
