@@ -14,6 +14,7 @@ const styles = {
     },
   },
   listItemText: {
+    color: '#000',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',

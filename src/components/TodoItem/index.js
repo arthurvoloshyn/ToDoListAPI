@@ -18,7 +18,6 @@ const TodoItem = ({ text, id }) => {
   const { url } = useRouteMatch();
   const history = useHistory();
   const classes = useStyles();
-  const listItemTextStyles = classes.listItemText;
 
   const onRemove = () => dispatch(removeTask(id));
   const onEdit = e => {
@@ -29,7 +28,7 @@ const TodoItem = ({ text, id }) => {
   return (
     <ListItem className={classes.listItem}>
       <Link component={RouterLink} to={`${url}/${id}`} className={classes.link}>
-        <ListItemText className={listItemTextStyles}>{text}</ListItemText>
+        <ListItemText className={classes.listItemText}>{text}</ListItemText>
         <ListItemSecondaryAction>
           <IconButton aria-label="Delete" onClick={onRemove}>
             <DeleteIcon />
@@ -46,12 +45,10 @@ const TodoItem = ({ text, id }) => {
 TodoItem.propTypes = {
   id: propTypes.oneOfType([propTypes.number, propTypes.string]).isRequired,
   text: propTypes.string,
-  completed: propTypes.bool,
 };
 
 TodoItem.defaultProps = {
   text: 'New task',
-  completed: false,
 };
 
 export default memo(TodoItem);
