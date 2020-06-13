@@ -39,7 +39,6 @@ const ROUTES = [
   {
     id: 'NoMatch',
     exact: false,
-    path: '*',
     component: NoMatch,
   },
 ];
