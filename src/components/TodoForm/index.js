@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Paper, TextField } from '@material-ui/core';
 import ACTION_TYPES from '../../constants/actionTypes';
 import useInputState from '../../hooks/useInputState';
@@ -6,14 +7,17 @@ import { DispatchContext } from '../../contexts/todos';
 import useStyles from './styles';
 
 const TodoForm = () => {
+  const history = useHistory();
   const [value, handleChange, reset] = useInputState('');
   const dispatch = useContext(DispatchContext);
   const classes = useStyles();
 
   const onSubmit = event => {
     event.preventDefault();
-    dispatch({ type: ACTION_TYPES.ADD, task: value, id: new Date().getTime() });
+    const id = new Date().getTime();
+    dispatch({ type: ACTION_TYPES.ADD, task: value, id });
     reset();
+    history.push(`/tasks/${id}`);
   };
 
   return (

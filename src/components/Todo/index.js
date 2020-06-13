@@ -1,10 +1,12 @@
 import React from 'react';
-import TodoForm from '../TodoForm';
+import ToDoButton from '../ToDoButton';
 import TodoList from '../TodoList';
 
 const Todo = () => (
   <>
-    <TodoForm />
+    <ToDoButton href="/new" color="secondary">
+      Create a new todo
+    </ToDoButton>
     <TodoList />
   </>
 );
