@@ -12,7 +12,7 @@ export const TodosContext = createContext();
 export const DispatchContext = createContext();
 
 export const TodosProvider = ({ children }) => {
-  const [todos, dispatch] = useLocalStorageReducer('todos', defaultTodos, tasks);
+  const [todos, dispatch] = useLocalStorageReducer('tasks', defaultTodos, tasks);
 
   return (
     <TodosContext.Provider value={todos}>

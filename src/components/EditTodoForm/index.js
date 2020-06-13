@@ -32,7 +32,7 @@ EditTodoForm.propTypes = {
 };
 
 EditTodoForm.defaultProps = {
-  text: 'New task',
+  text: 'Simple todo',
 };
 
 export default EditTodoForm;

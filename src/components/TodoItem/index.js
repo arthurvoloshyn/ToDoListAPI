@@ -48,7 +48,7 @@ TodoItem.propTypes = {
 };
 
 TodoItem.defaultProps = {
-  text: 'New task',
+  text: 'Simple todo',
 };
 
 export default memo(TodoItem);
