@@ -13,6 +13,12 @@ const styles = {
   grid: {
     margin: '1rem 0',
   },
+  fab: {
+    margin: '1rem',
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+  },
   link: {
     '&:hover': {
       textDecoration: 'none',

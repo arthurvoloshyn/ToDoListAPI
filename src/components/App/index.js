@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link as RouterLink } from 'react-router-dom';
-import { Paper, AppBar, Toolbar, Grid, Link } from '@material-ui/core';
+import { Paper, AppBar, Toolbar, Grid, Link, Fab } from '@material-ui/core';
+import { ArrowBack as ArrowBackIcon } from '@material-ui/icons';
 import ROUTES from '../../constants/routes';
 import { TodosProvider } from '../../contexts/todos';
 import useStyles from './styles';
@@ -31,6 +32,9 @@ const App = () => {
             </TodosProvider>
           </Grid>
         </Grid>
+        <Fab color="primary" aria-label="back" className={classes.fab}>
+          <ArrowBackIcon />
+        </Fab>
       </Paper>
     </Router>
   );
