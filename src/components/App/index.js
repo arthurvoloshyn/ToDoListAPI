@@ -1,12 +1,12 @@
 import React from 'react';
-import { Switch, Route, Link as RouterLink, useLocation, useHistory } from 'react-router-dom';
+import { Link as RouterLink, useLocation, useHistory } from 'react-router-dom';
+import propTypes from 'prop-types';
 import { Paper, AppBar, Toolbar, Grid, Link, Fab } from '@material-ui/core';
 import { ArrowBack as ArrowBackIcon } from '@material-ui/icons';
-import ROUTES from '../../constants/routes';
 import { TodosProvider } from '../../contexts/todos';
 import useStyles from './styles';
 
-const App = () => {
+const App = ({ children }) => {
   const history = useHistory();
   const { pathname } = useLocation();
   const classes = useStyles();
@@ -24,15 +24,7 @@ const App = () => {
       </AppBar>
       <Grid container justify="center" className={classes.grid}>
         <Grid item xs={11} md={8} lg={4}>
-          <TodosProvider>
-            <Switch>
-              {ROUTES.map(({ id, exact, path, component: Component }) => (
-                <Route key={id} exact={exact} path={path}>
-                  <Component />
-                </Route>
-              ))}
-            </Switch>
-          </TodosProvider>
+          <TodosProvider>{children}</TodosProvider>
         </Grid>
       </Grid>
       {isTaskLocation && (
@@ -42,6 +34,10 @@ const App = () => {
       )}
     </Paper>
   );
+};
+
+App.propTypes = {
+  children: propTypes.node.isRequired,
 };
 
 export default App;
