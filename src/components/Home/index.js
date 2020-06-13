@@ -1,6 +1,6 @@
 import React from 'react';
-import ToDoButton from '../ToDoButton';
+import TodoButton from '../TodoButton';
 
-const Home = () => <ToDoButton href="/tasks">Go to the todo list</ToDoButton>;
+const Home = () => <TodoButton href="/tasks">Go to the todo list</TodoButton>;
 
 export default Home;

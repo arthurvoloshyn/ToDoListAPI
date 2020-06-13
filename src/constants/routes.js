@@ -21,7 +21,7 @@ const ROUTES = [
   {
     id: 'New',
     exact: false,
-    path: '/new',
+    path: '/tasks/new',
     component: TodoForm,
   },
   {

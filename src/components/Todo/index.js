@@ -1,12 +1,12 @@
 import React from 'react';
-import ToDoButton from '../ToDoButton';
+import TodoButton from '../TodoButton';
 import TodoList from '../TodoList';
 
 const Todo = () => (
   <>
-    <ToDoButton href="/new" color="secondary">
+    <TodoButton href="/tasks/new" color="secondary">
       Create a new todo
-    </ToDoButton>
+    </TodoButton>
     <TodoList />
   </>
 );

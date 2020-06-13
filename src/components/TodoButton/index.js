@@ -4,7 +4,7 @@ import propTypes from 'prop-types';
 import { Button, Link } from '@material-ui/core';
 import useStyles from './styles';
 
-const ToDoButton = ({ href, color, children }) => {
+const TodoButton = ({ href, color, children }) => {
   const classes = useStyles();
 
   return (
@@ -16,15 +16,15 @@ const ToDoButton = ({ href, color, children }) => {
   );
 };
 
-ToDoButton.propTypes = {
+TodoButton.propTypes = {
   href: propTypes.string.isRequired,
   color: propTypes.string,
   children: propTypes.node,
 };
 
-ToDoButton.defaultProps = {
+TodoButton.defaultProps = {
   color: 'primary',
   children: null,
 };
 
-export default ToDoButton;
+export default TodoButton;
