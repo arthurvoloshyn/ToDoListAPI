@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import propTypes from 'prop-types';
 import { TextField } from '@material-ui/core';
-import ACTION_TYPES from '../../constants/actionTypes';
 import useInputState from '../../hooks/useInputState';
 import { DispatchContext } from '../../contexts/todos';
+import { editTask } from '../../actions/actionCreator';
 import useStyles from './styles';
 
 const EditTodoForm = ({ id, task, toggleEditForm }) => {
@@ -13,7 +13,7 @@ const EditTodoForm = ({ id, task, toggleEditForm }) => {
 
   const onSubmit = event => {
     event.preventDefault();
-    dispatch({ type: ACTION_TYPES.EDIT, id, task: value });
+    dispatch(editTask(id, value));
     reset();
     toggleEditForm();
   };

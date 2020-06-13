@@ -8,9 +8,9 @@ import {
   ListItemSecondaryAction,
 } from '@material-ui/core';
 import { Delete as DeleteIcon, Edit as EditIcon } from '@material-ui/icons';
-import ACTION_TYPES from '../../constants/actionTypes';
 import { DispatchContext } from '../../contexts/todos';
 import useToggle from '../../hooks/useToggle';
+import { toggleTask, removeTask } from '../../actions/actionCreator';
 import EditTodoForm from '../EditTodoForm';
 import useStyles from './styles';
 
@@ -21,8 +21,8 @@ const TodoItem = ({ task, completed, id }) => {
   const listItemTextStyles = classes.listItemText;
   const tabIndex = -1;
 
-  const onToggle = () => dispatch({ type: ACTION_TYPES.TOGGLE, id });
-  const onRemove = () => dispatch({ type: ACTION_TYPES.REMOVE, id });
+  const onToggle = () => dispatch(toggleTask(id));
+  const onRemove = () => dispatch(removeTask(id));
 
   return (
     <ListItem className={classes.listItem}>
