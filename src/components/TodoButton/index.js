@@ -4,12 +4,12 @@ import propTypes from 'prop-types';
 import { Button, Link } from '@material-ui/core';
 import useStyles from './styles';
 
-const TodoButton = ({ href, color, children }) => {
+const TodoButton = ({ href, color, children, ...attrs }) => {
   const classes = useStyles();
 
   return (
     <Link component={RouterLink} to={href} className={classes.link}>
-      <Button variant="contained" color={color} className={classes.button}>
+      <Button {...attrs} variant="contained" color={color} className={classes.button}>
         {children}
       </Button>
     </Link>
