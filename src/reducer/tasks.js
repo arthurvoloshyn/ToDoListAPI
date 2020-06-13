@@ -1,15 +1,13 @@
 import ACTION_TYPES from '../constants/actionTypes';
 
-const tasks = (state, { type, task, id }) => {
+const tasks = (state, { type, text, id }) => {
   switch (type) {
-    case ACTION_TYPES.ADD:
-      return [...state, { id, task, completed: false }];
-    case ACTION_TYPES.REMOVE:
+    case ACTION_TYPES.ADD_TASK:
+      return [...state, { id, text }];
+    case ACTION_TYPES.REMOVE_TASK:
       return state.filter(todo => todo.id !== id);
-    case ACTION_TYPES.TOGGLE:
-      return state.map(todo => (todo.id === id ? { ...todo, completed: !todo.completed } : todo));
-    case ACTION_TYPES.EDIT:
-      return state.map(todo => (todo.id === id ? { ...todo, task } : todo));
+    case ACTION_TYPES.EDIT_TASK:
+      return state.map(todo => (todo.id === id ? { ...todo, text } : todo));
     default:
       return state;
   }

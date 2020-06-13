@@ -4,8 +4,8 @@ import tasks from '../reducer/tasks';
 import useLocalStorageReducer from '../hooks/useLocalStorageReducer';
 
 const defaultTodos = [
-  { id: 1, task: 'Mow the lawn using goats', completed: false },
-  { id: 2, task: 'Release lady bugs into garden', completed: true },
+  { id: 1592065460597, text: 'Mow the lawn using goats' },
+  { id: 1592065475243, text: 'Release lady bugs into garden' },
 ];
 
 export const TodosContext = createContext();

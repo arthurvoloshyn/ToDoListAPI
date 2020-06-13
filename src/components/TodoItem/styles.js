@@ -5,7 +5,6 @@ const styles = {
     height: '64px',
   },
   listItemText: {
-    textDecoration: completed => (completed ? 'line-through' : 'none'),
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',

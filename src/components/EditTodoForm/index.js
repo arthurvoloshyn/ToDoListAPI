@@ -6,9 +6,9 @@ import { DispatchContext } from '../../contexts/todos';
 import { editTask } from '../../actions/actionCreator';
 import useStyles from './styles';
 
-const EditTodoForm = ({ id, task, toggleEditForm }) => {
+const EditTodoForm = ({ id, text, toggleEditForm }) => {
   const dispatch = useContext(DispatchContext);
-  const [value, handleChange, reset] = useInputState(task);
+  const [value, handleChange, reset] = useInputState(text);
   const classes = useStyles();
 
   const onSubmit = event => {
@@ -29,12 +29,12 @@ const EditTodoForm = ({ id, task, toggleEditForm }) => {
 
 EditTodoForm.propTypes = {
   id: propTypes.oneOfType([propTypes.number, propTypes.string]).isRequired,
-  task: propTypes.string,
+  text: propTypes.string,
   toggleEditForm: propTypes.func,
 };
 
 EditTodoForm.defaultProps = {
-  task: 'New task',
+  text: 'New task',
   toggleEditForm: () => {},
 };
 

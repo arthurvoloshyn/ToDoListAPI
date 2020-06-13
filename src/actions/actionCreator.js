@@ -1,23 +1,18 @@
 import ACTION_TYPES from '../constants/actionTypes';
 
-export const addTask = (id, task) => ({
-  type: ACTION_TYPES.ADD,
+export const addTask = (id, text) => ({
+  type: ACTION_TYPES.ADD_TASK,
   id,
-  task,
+  text,
 });
 
-export const editTask = (id, task) => ({
-  type: ACTION_TYPES.EDIT,
+export const editTask = (id, text) => ({
+  type: ACTION_TYPES.EDIT_TASK,
   id,
-  task,
+  text,
 });
 
 export const removeTask = id => ({
-  type: ACTION_TYPES.REMOVE,
-  id,
-});
-
-export const toggleTask = id => ({
-  type: ACTION_TYPES.TOGGLE,
+  type: ACTION_TYPES.REMOVE_TASK,
   id,
 });

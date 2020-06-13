@@ -1,8 +1,7 @@
 const ACTION_TYPES = {
-  ADD: 'ADD',
-  REMOVE: 'REMOVE',
-  TOGGLE: 'TOGGLE',
-  EDIT: 'EDIT',
+  ADD_TASK: 'ADD_TASK',
+  REMOVE_TASK: 'REMOVE_TASK',
+  EDIT_TASK: 'EDIT_TASK',
 };
 
 export default ACTION_TYPES;
