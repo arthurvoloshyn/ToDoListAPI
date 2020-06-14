@@ -15,7 +15,7 @@ const styles = {
   },
   fab: {
     margin: '1rem',
-    position: 'absolute',
+    position: 'fixed',
     bottom: 0,
     right: 0,
   },
