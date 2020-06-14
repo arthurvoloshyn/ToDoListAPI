@@ -1,39 +1,17 @@
-import React, { memo, useContext } from 'react';
-import { Link, useHistory, useRouteMatch } from 'react-router-dom';
+import React, { memo } from 'react';
+import { useRouteMatch } from 'react-router-dom';
 import propTypes from 'prop-types';
-import { ListItemText, ListItem, IconButton, ListItemSecondaryAction } from '@material-ui/core';
-import { Delete as DeleteIcon, Edit as EditIcon } from '@material-ui/icons';
-import { DispatchContext } from '../../contexts/todos';
-import { removeTask } from '../../actions/actionCreator';
+import { ListItemText, ListItem } from '@material-ui/core';
+import TodoLink from '../TodoLink';
 import useStyles from './styles';
 
 const TodoListItem = ({ text, id }) => {
-  const dispatch = useContext(DispatchContext);
   const { url } = useRouteMatch();
-  const history = useHistory();
   const classes = useStyles();
 
-  const onRemove = e => {
-    e.preventDefault();
-    dispatch(removeTask(id));
-  };
-
-  const onEdit = e => {
-    e.preventDefault();
-    history.push(`${url}/${id}/edit`);
-  };
-
   return (
-    <ListItem className={classes.listItem} component={Link} to={`${url}/${id}`}>
+    <ListItem className={classes.listItem} component={TodoLink} href={`${url}/${id}`}>
       <ListItemText className={classes.listItemText}>{text}</ListItemText>
-      <ListItemSecondaryAction>
-        <IconButton aria-label="Delete" onClick={onRemove}>
-          <DeleteIcon />
-        </IconButton>
-        <IconButton aria-label="Edit" onClick={onEdit}>
-          <EditIcon />
-        </IconButton>
-      </ListItemSecondaryAction>
     </ListItem>
   );
 };

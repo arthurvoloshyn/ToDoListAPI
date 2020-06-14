@@ -15,13 +15,13 @@ const TodoForm = () => {
   const task = getDataById(tasks, id);
   const [value, handleChange, reset] = useInputState(task.text);
   const classes = useStyles();
-  const taskLabel = id ? 'Edit the todo' : 'Add a new todo';
+  const taskLabel = task.id ? 'Edit the todo' : 'Add a new todo';
 
   const onSubmit = e => {
     e.preventDefault();
 
-    const taskMethod = id ? editTask : addTask;
-    const taskId = id || new Date().getTime();
+    const taskMethod = task.id ? editTask : addTask;
+    const taskId = task.id || new Date().getTime();
 
     dispatch(taskMethod(taskId, value));
     reset();
