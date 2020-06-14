@@ -11,9 +11,9 @@ const TodoForm = () => {
   const history = useHistory();
   const { id } = useParams();
   const dispatch = useContext(DispatchContext);
-  const todos = useContext(TodosContext);
-  const todo = getDataById(todos, id);
-  const [value, handleChange, reset] = useInputState(todo.text);
+  const tasks = useContext(TodosContext);
+  const task = getDataById(tasks, id);
+  const [value, handleChange, reset] = useInputState(task.text);
   const classes = useStyles();
   const taskLabel = id ? 'Edit the todo' : 'Add a new todo';
 

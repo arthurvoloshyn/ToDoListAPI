@@ -1,25 +1,23 @@
 import React, { useContext, Fragment } from 'react';
-import { Paper, List, Divider } from '@material-ui/core';
+import { List, Divider } from '@material-ui/core';
 import { TodosContext } from '../../contexts/todos';
 import TodoItem from '../TodoItem';
 
 const TodoList = () => {
-  const todos = useContext(TodosContext);
-  const todosLength = todos.length - 1;
+  const tasks = useContext(TodosContext);
+  const tasksLength = tasks.length - 1;
 
-  if (!todos.length) return null;
+  if (!tasks.length) return null;
 
   return (
-    <Paper>
-      <List>
-        {todos.map((todo, i) => (
-          <Fragment key={todo.id}>
-            <TodoItem {...todo} />
-            {i < todosLength && <Divider />}
-          </Fragment>
-        ))}
-      </List>
-    </Paper>
+    <List>
+      {tasks.map((task, i) => (
+        <Fragment key={task.id}>
+          <TodoItem {...task} />
+          {i < tasksLength && <Divider />}
+        </Fragment>
+      ))}
+    </List>
   );
 };
 
