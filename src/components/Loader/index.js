@@ -9,7 +9,7 @@ const Loader = ({ size, color, ...attrs }) => (
 );
 
 Loader.propTypes = {
-  size: propTypes.string,
+  size: propTypes.number,
   color: propTypes.string,
 };
 
