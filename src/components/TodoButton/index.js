@@ -1,18 +1,18 @@
 import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
 import propTypes from 'prop-types';
-import { Button, Link } from '@material-ui/core';
+import { Button } from '@material-ui/core';
+import TodoLink from '../TodoLink';
 import useStyles from './styles';
 
 const TodoButton = ({ href, color, children, ...attrs }) => {
   const classes = useStyles();
 
   return (
-    <Link component={RouterLink} to={href} className={classes.link}>
-      <Button {...attrs} variant="contained" color={color} className={classes.button}>
+    <TodoLink href={href}>
+      <Button {...attrs} variant="contained" color={color} className={classes.button} fullWidth>
         {children}
       </Button>
-    </Link>
+    </TodoLink>
   );
 };
 

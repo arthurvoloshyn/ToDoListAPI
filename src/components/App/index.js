@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link as RouterLink, useLocation, useHistory } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import propTypes from 'prop-types';
-import { Paper, AppBar, Toolbar, Grid, Link, Fab } from '@material-ui/core';
+import { Paper, AppBar, Toolbar, Grid, Fab } from '@material-ui/core';
 import { ArrowBack as ArrowBackIcon } from '@material-ui/icons';
 import { TodosProvider } from '../../contexts/todos';
+import TodoLink from '../TodoLink';
 import useStyles from './styles';
 
 const App = ({ children }) => {
@@ -17,9 +18,7 @@ const App = ({ children }) => {
     <Paper elevation={0} className={classes.paper}>
       <AppBar color="primary" position="static" className={classes.appBar}>
         <Toolbar>
-          <Link component={RouterLink} to="/" color="inherit" className={classes.link}>
-            ToDo List API
-          </Link>
+          <TodoLink href="/">ToDo List API</TodoLink>
         </Toolbar>
       </AppBar>
       <Grid container justify="center" className={classes.grid}>

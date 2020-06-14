@@ -19,11 +19,6 @@ const styles = {
     bottom: 0,
     right: 0,
   },
-  link: {
-    '&:hover': {
-      textDecoration: 'none',
-    },
-  },
 };
 
 const useStyles = makeStyles(styles);

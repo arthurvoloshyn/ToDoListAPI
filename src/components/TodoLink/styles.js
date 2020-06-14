@@ -1,8 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const styles = {
-  button: {
-    margin: '1rem 0',
+  link: {
+    '&:hover': {
+      textDecoration: 'none',
+    },
   },
 };
 
