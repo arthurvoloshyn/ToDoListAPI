@@ -19,7 +19,11 @@ const TodoItem = ({ text, id }) => {
   const history = useHistory();
   const classes = useStyles();
 
-  const onRemove = () => dispatch(removeTask(id));
+  const onRemove = e => {
+    e.preventDefault();
+    dispatch(removeTask(id));
+  };
+
   const onEdit = e => {
     e.preventDefault();
     history.push(`${url}/${id}/edit`);

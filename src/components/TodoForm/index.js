@@ -8,12 +8,12 @@ import useStyles from './styles';
 
 const TodoForm = () => {
   const history = useHistory();
-  const [value, handleChange, reset] = useInputState('');
   const dispatch = useContext(DispatchContext);
+  const [value, handleChange, reset] = useInputState('');
   const classes = useStyles();
 
-  const onSubmit = event => {
-    event.preventDefault();
+  const onSubmit = e => {
+    e.preventDefault();
     const id = new Date().getTime();
     dispatch(addTask(id, value));
     reset();
