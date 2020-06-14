@@ -24,7 +24,7 @@ const TodoItem = ({ text, id }) => {
   };
 
   return (
-    <ListItem className={classes.listItem} component={Link} to={`${url}/${id}`} baseVariant>
+    <ListItem className={classes.listItem} component={Link} to={`${url}/${id}`} defaultVariant>
       <ListItemText className={classes.listItemText}>{text}</ListItemText>
       <ListItemSecondaryAction>
         <IconButton aria-label="Delete" onClick={onRemove}>
