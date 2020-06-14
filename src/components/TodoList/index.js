@@ -1,7 +1,7 @@
 import React, { useContext, Fragment } from 'react';
 import { List, Divider } from '@material-ui/core';
 import { TodosContext } from '../../contexts/todos';
-import TodoItem from '../TodoItem';
+import TodoListItem from '../TodoListItem';
 
 const TodoList = () => {
   const tasks = useContext(TodosContext);
@@ -13,7 +13,7 @@ const TodoList = () => {
     <List>
       {tasks.map((task, i) => (
         <Fragment key={task.id}>
-          <TodoItem {...task} />
+          <TodoListItem {...task} />
           {i < tasksLength && <Divider />}
         </Fragment>
       ))}

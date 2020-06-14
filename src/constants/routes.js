@@ -1,7 +1,7 @@
 import Home from '../components/Home';
 import Todo from '../components/Todo';
 import TodoForm from '../components/TodoForm';
-import TodoItem from '../components/TodoItem';
+import TodoItem from '../components/TodoListItem';
 import NoMatch from '../components/NoMatch';
 
 const ROUTES = [

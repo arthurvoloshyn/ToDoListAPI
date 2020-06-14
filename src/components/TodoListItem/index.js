@@ -7,7 +7,7 @@ import { DispatchContext } from '../../contexts/todos';
 import { removeTask } from '../../actions/actionCreator';
 import useStyles from './styles';
 
-const TodoItem = ({ text, id }) => {
+const TodoListItem = ({ text, id }) => {
   const dispatch = useContext(DispatchContext);
   const { url } = useRouteMatch();
   const history = useHistory();
@@ -38,13 +38,13 @@ const TodoItem = ({ text, id }) => {
   );
 };
 
-TodoItem.propTypes = {
+TodoListItem.propTypes = {
   id: propTypes.oneOfType([propTypes.number, propTypes.string]).isRequired,
   text: propTypes.string,
 };
 
-TodoItem.defaultProps = {
+TodoListItem.defaultProps = {
   text: 'Simple todo',
 };
 
-export default memo(TodoItem);
+export default memo(TodoListItem);
