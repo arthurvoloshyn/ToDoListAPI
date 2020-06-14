@@ -4,15 +4,6 @@ const styles = {
   listItem: {
     height: '64px',
   },
-  link: {
-    width: '100%',
-    height: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    '&:hover': {
-      textDecoration: 'none',
-    },
-  },
   listItemText: {
     color: '#000',
     whiteSpace: 'nowrap',
