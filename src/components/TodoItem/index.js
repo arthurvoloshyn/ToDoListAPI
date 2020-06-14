@@ -1,11 +1,10 @@
 import React, { memo, useContext } from 'react';
-import { useHistory, useRouteMatch } from 'react-router-dom';
+import { Link, useHistory, useRouteMatch } from 'react-router-dom';
 import propTypes from 'prop-types';
 import { ListItemText, ListItem, IconButton, ListItemSecondaryAction } from '@material-ui/core';
 import { Delete as DeleteIcon, Edit as EditIcon } from '@material-ui/icons';
 import { DispatchContext } from '../../contexts/todos';
 import { removeTask } from '../../actions/actionCreator';
-import TodoLink from '../TodoLink';
 import useStyles from './styles';
 
 const TodoItem = ({ text, id }) => {
@@ -25,18 +24,16 @@ const TodoItem = ({ text, id }) => {
   };
 
   return (
-    <ListItem className={classes.listItem}>
-      <TodoLink href={`${url}/${id}`}>
-        <ListItemText className={classes.listItemText}>{text}</ListItemText>
-        <ListItemSecondaryAction>
-          <IconButton aria-label="Delete" onClick={onRemove}>
-            <DeleteIcon />
-          </IconButton>
-          <IconButton aria-label="Edit" onClick={onEdit}>
-            <EditIcon />
-          </IconButton>
-        </ListItemSecondaryAction>
-      </TodoLink>
+    <ListItem className={classes.listItem} component={Link} to={`${url}/${id}`} baseVariant>
+      <ListItemText className={classes.listItemText}>{text}</ListItemText>
+      <ListItemSecondaryAction>
+        <IconButton aria-label="Delete" onClick={onRemove}>
+          <DeleteIcon />
+        </IconButton>
+        <IconButton aria-label="Edit" onClick={onEdit}>
+          <EditIcon />
+        </IconButton>
+      </ListItemSecondaryAction>
     </ListItem>
   );
 };
