@@ -6,31 +6,31 @@ import NoMatch from '../components/NoMatch';
 
 const ROUTES = [
   {
-    id: 'Home',
+    id: 'home',
     exact: true,
     path: '/',
     component: Home,
   },
   {
-    id: 'Tasks',
+    id: 'tasks',
     exact: true,
     path: '/tasks',
     component: Todo,
   },
   {
-    id: 'New',
+    id: 'newTask',
     exact: false,
     path: '/tasks/new',
     component: TodoForm,
   },
   {
-    id: 'Task',
+    id: 'task',
     exact: true,
     path: '/tasks/:id',
     component: TodoItem,
   },
   {
-    id: 'Edit',
+    id: 'editTask',
     exact: false,
     path: '/tasks/:id/edit',
     component: TodoForm,
