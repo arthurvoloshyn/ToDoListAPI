@@ -8,7 +8,7 @@ import Loader from '../components/Loader';
 
 const defaultDispatch = () => {};
 
-export const TasksContext = createContext(initState);
+export const TasksContext = createContext(initState.tasks);
 export const DispatchContext = createContext(defaultDispatch);
 
 export const TasksProvider = ({ children }) => {
