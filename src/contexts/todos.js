@@ -1,22 +1,18 @@
 import React, { createContext } from 'react';
 import propTypes from 'prop-types';
-import tasks from '../reducer/tasks';
-import useLocalStorageReducer from '../hooks/useLocalStorageReducer';
+import { initState } from '../reducer/tasks';
+import useFetchTaskList from '../hooks/useFetchTaskList';
 
-const defaultTasks = [
-  { id: 1592065460597, text: 'Mow the lawn using goats' },
-  { id: 1592065475243, text: 'Release lady bugs into garden' },
-];
 const defaultDispatch = () => {};
 
-export const TasksContext = createContext(defaultTasks);
+export const TasksContext = createContext(initState);
 export const DispatchContext = createContext(defaultDispatch);
 
 export const TasksProvider = ({ children }) => {
-  const [taskList, dispatch] = useLocalStorageReducer('tasks', defaultTasks, tasks);
+  const [state, dispatch] = useFetchTaskList();
 
   return (
-    <TasksContext.Provider value={taskList}>
+    <TasksContext.Provider value={state}>
       <DispatchContext.Provider value={dispatch}>{children}</DispatchContext.Provider>
     </TasksContext.Provider>
   );

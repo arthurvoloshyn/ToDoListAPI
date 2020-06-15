@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { Paper, TextField } from '@material-ui/core';
-import { getDataById } from '../../utils/helpers';
+import helpers from '../../utils/helpers';
 import useInputState from '../../hooks/useInputState';
 import { DispatchContext, TasksContext } from '../../contexts/todos';
 import { addTask, editTask } from '../../actions/actionCreator';
@@ -11,8 +11,8 @@ const TodoForm = () => {
   const history = useHistory();
   const { id } = useParams();
   const dispatch = useContext(DispatchContext);
-  const tasks = useContext(TasksContext);
-  const task = getDataById(tasks, id);
+  const { tasks } = useContext(TasksContext);
+  const task = helpers.getDataById(tasks, id);
   const [value, handleChange, reset] = useInputState(task.text);
   const classes = useStyles();
   const taskLabel = task.id ? 'Edit the todo' : 'Add a new todo';
