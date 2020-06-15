@@ -11,7 +11,7 @@ const TodoForm = () => {
   const history = useHistory();
   const { id } = useParams();
   const dispatch = useContext(DispatchContext);
-  const { tasks } = useContext(TasksContext);
+  const tasks = useContext(TasksContext);
   const task = helpers.getDataById(tasks, id);
   const [value, handleChange, reset] = useInputState(task.text);
   const classes = useStyles();

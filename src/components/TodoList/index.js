@@ -4,7 +4,7 @@ import { TasksContext } from '../../contexts/todos';
 import TodoListItem from '../TodoListItem';
 
 const TodoList = () => {
-  const { tasks } = useContext(TasksContext);
+  const tasks = useContext(TasksContext);
   const tasksLength = tasks.length - 1;
 
   if (!tasks.length) return null;

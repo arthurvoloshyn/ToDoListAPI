@@ -13,7 +13,6 @@ const useFetchTaskList = () => {
 
     try {
       const result = await api.getTasks();
-      console.log(result);
       const sortedTaskList = helpers.sortById(result);
 
       dispatch(fetchSuccess(sortedTaskList));
