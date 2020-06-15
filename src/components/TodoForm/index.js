@@ -20,10 +20,10 @@ const TodoForm = () => {
   const onSubmit = e => {
     e.preventDefault();
 
-    const taskMethod = task.id ? editTask : addTask;
+    const taskAction = task.id ? editTask : addTask;
     const taskId = task.id || new Date().getTime();
 
-    dispatch(taskMethod(taskId, value));
+    dispatch(taskAction(taskId, value));
     reset();
     history.push(`/tasks/${taskId}`);
   };

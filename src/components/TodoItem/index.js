@@ -12,6 +12,7 @@ import { Delete as DeleteIcon, Edit as EditIcon } from '@material-ui/icons';
 import { getDataById } from '../../utils/helpers';
 import { DispatchContext, TodosContext } from '../../contexts/todos';
 import { removeTask } from '../../actions/actionCreator';
+import TodoButton from '../TodoButton';
 import useStyles from './styles';
 
 const TodoListItem = () => {
@@ -36,19 +37,22 @@ const TodoListItem = () => {
   };
 
   return (
-    <Paper>
-      <ListItem className={classes.listItem}>
-        <ListItemText className={classes.listItemText}>{task.text}</ListItemText>
-        <ListItemSecondaryAction>
-          <IconButton aria-label="Delete" onClick={onRemove}>
-            <DeleteIcon />
-          </IconButton>
-          <IconButton aria-label="Edit" onClick={onEdit}>
-            <EditIcon />
-          </IconButton>
-        </ListItemSecondaryAction>
-      </ListItem>
-    </Paper>
+    <>
+      <TodoButton href="/tasks">Go back to the todo list</TodoButton>
+      <Paper>
+        <ListItem className={classes.listItem}>
+          <ListItemText className={classes.listItemText}>{task.text}</ListItemText>
+          <ListItemSecondaryAction>
+            <IconButton aria-label="Delete" onClick={onRemove}>
+              <DeleteIcon />
+            </IconButton>
+            <IconButton aria-label="Edit" onClick={onEdit}>
+              <EditIcon />
+            </IconButton>
+          </ListItemSecondaryAction>
+        </ListItem>
+      </Paper>
+    </>
   );
 };
 

@@ -6,7 +6,7 @@ import useStyles from './styles';
 
 const Loader = ({ size, color, className, ...attrs }) => {
   const classes = useStyles(size);
-  const loaderClasses = classNames(className, classes.loader);
+  const loaderClasses = classNames(classes.loader, className);
 
   return (
     <Grid container justify="center" alignItems="center" className={loaderClasses}>

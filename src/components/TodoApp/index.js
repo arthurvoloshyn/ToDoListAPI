@@ -7,7 +7,7 @@ import { TodosProvider } from '../../contexts/todos';
 import TodoLink from '../TodoLink';
 import useStyles from './styles';
 
-const App = ({ children }) => {
+const TodoApp = ({ children }) => {
   const history = useHistory();
   const { pathname } = useLocation();
   const classes = useStyles();
@@ -35,8 +35,8 @@ const App = ({ children }) => {
   );
 };
 
-App.propTypes = {
+TodoApp.propTypes = {
   children: propTypes.node.isRequired,
 };
 
-export default App;
+export default TodoApp;
