@@ -1,12 +1,6 @@
 import React, { useContext } from 'react';
 import { useHistory, useRouteMatch, useParams } from 'react-router-dom';
-import {
-  Paper,
-  ListItemText,
-  ListItem,
-  IconButton,
-  ListItemSecondaryAction,
-} from '@material-ui/core';
+import { Paper, Typography, Box, IconButton, Container } from '@material-ui/core';
 import { Delete as DeleteIcon, Edit as EditIcon } from '@material-ui/icons';
 import { getDataById } from '../../utils/helpers';
 import { DispatchContext, TasksContext } from '../../contexts/todos';
@@ -39,17 +33,21 @@ const TodoListItem = () => {
     <>
       <TodoButton href="/tasks">Go back to the todo list</TodoButton>
       <Paper>
-        <ListItem className={classes.listItem}>
-          <ListItemText className={classes.listItemText}>{task.text}</ListItemText>
-          <ListItemSecondaryAction>
+        <Container className={classes.container}>
+          <Box className={classes.textBox}>
+            <Typography className={classes.typography} component="span">
+              {task.text}
+            </Typography>
+          </Box>
+          <Box className={classes.secondaryAction}>
             <IconButton aria-label="Delete" onClick={onRemove}>
               <DeleteIcon />
             </IconButton>
             <IconButton aria-label="Edit" onClick={onEdit}>
               <EditIcon />
             </IconButton>
-          </ListItemSecondaryAction>
-        </ListItem>
+          </Box>
+        </Container>
       </Paper>
     </>
   );
