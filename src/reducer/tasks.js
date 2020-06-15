@@ -1,7 +1,7 @@
 import ACTION_TYPES from '../constants/actionTypes';
 
 export const initState = {
-  isLoading: false,
+  isLoading: true,
   isError: false,
   tasks: [],
 };
