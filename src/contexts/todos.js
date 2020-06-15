@@ -7,9 +7,10 @@ const defaultTasks = [
   { id: 1592065460597, text: 'Mow the lawn using goats' },
   { id: 1592065475243, text: 'Release lady bugs into garden' },
 ];
+const defaultDispatch = () => {};
 
-export const TasksContext = createContext();
-export const DispatchContext = createContext();
+export const TasksContext = createContext(defaultTasks);
+export const DispatchContext = createContext(defaultDispatch);
 
 export const TasksProvider = ({ children }) => {
   const [taskList, dispatch] = useLocalStorageReducer('tasks', defaultTasks, tasks);
