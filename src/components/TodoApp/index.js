@@ -3,7 +3,7 @@ import { useLocation, useHistory } from 'react-router-dom';
 import propTypes from 'prop-types';
 import { Paper, AppBar, Toolbar, Grid, Fab } from '@material-ui/core';
 import { ArrowBack as ArrowBackIcon } from '@material-ui/icons';
-import { TodosProvider } from '../../contexts/todos';
+import { TasksProvider } from '../../contexts/todos';
 import TodoLink from '../TodoLink';
 import useStyles from './styles';
 
@@ -23,7 +23,7 @@ const TodoApp = ({ children }) => {
       </AppBar>
       <Grid container justify="center" className={classes.grid}>
         <Grid item xs={11} md={8} lg={4}>
-          <TodosProvider>{children}</TodosProvider>
+          <TasksProvider>{children}</TasksProvider>
         </Grid>
       </Grid>
       {isTaskLocation && (

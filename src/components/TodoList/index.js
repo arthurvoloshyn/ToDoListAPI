@@ -1,10 +1,10 @@
 import React, { useContext, Fragment } from 'react';
 import { List, Divider } from '@material-ui/core';
-import { TodosContext } from '../../contexts/todos';
+import { TasksContext } from '../../contexts/todos';
 import TodoListItem from '../TodoListItem';
 
 const TodoList = () => {
-  const tasks = useContext(TodosContext);
+  const tasks = useContext(TasksContext);
   const tasksLength = tasks.length - 1;
 
   if (!tasks.length) return null;

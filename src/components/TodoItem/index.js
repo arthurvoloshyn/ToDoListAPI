@@ -1,6 +1,5 @@
-import React, { memo, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useHistory, useRouteMatch, useParams } from 'react-router-dom';
-import propTypes from 'prop-types';
 import {
   Paper,
   ListItemText,
@@ -10,7 +9,7 @@ import {
 } from '@material-ui/core';
 import { Delete as DeleteIcon, Edit as EditIcon } from '@material-ui/icons';
 import { getDataById } from '../../utils/helpers';
-import { DispatchContext, TodosContext } from '../../contexts/todos';
+import { DispatchContext, TasksContext } from '../../contexts/todos';
 import { removeTask } from '../../actions/actionCreator';
 import TodoButton from '../TodoButton';
 import useStyles from './styles';
@@ -20,7 +19,7 @@ const TodoListItem = () => {
   const history = useHistory();
   const { id } = useParams();
   const dispatch = useContext(DispatchContext);
-  const tasks = useContext(TodosContext);
+  const tasks = useContext(TasksContext);
   const classes = useStyles();
 
   const task = getDataById(tasks, id);
@@ -56,13 +55,4 @@ const TodoListItem = () => {
   );
 };
 
-TodoListItem.propTypes = {
-  id: propTypes.oneOfType([propTypes.number, propTypes.string]).isRequired,
-  text: propTypes.string,
-};
-
-TodoListItem.defaultProps = {
-  text: 'Simple todo',
-};
-
-export default memo(TodoListItem);
+export default TodoListItem;

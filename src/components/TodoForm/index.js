@@ -3,7 +3,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { Paper, TextField } from '@material-ui/core';
 import { getDataById } from '../../utils/helpers';
 import useInputState from '../../hooks/useInputState';
-import { DispatchContext, TodosContext } from '../../contexts/todos';
+import { DispatchContext, TasksContext } from '../../contexts/todos';
 import { addTask, editTask } from '../../actions/actionCreator';
 import useStyles from './styles';
 
@@ -11,7 +11,7 @@ const TodoForm = () => {
   const history = useHistory();
   const { id } = useParams();
   const dispatch = useContext(DispatchContext);
-  const tasks = useContext(TodosContext);
+  const tasks = useContext(TasksContext);
   const task = getDataById(tasks, id);
   const [value, handleChange, reset] = useInputState(task.text);
   const classes = useStyles();

@@ -5,13 +5,13 @@ import { Button } from '@material-ui/core';
 import TodoLink from '../TodoLink';
 import useStyles from './styles';
 
-const TodoButton = ({ href, color, children, className, ...attrs }) => {
+const TodoButton = ({ children, href, color, className, ...attrs }) => {
   const classes = useStyles();
-  const buttonClasses = classNames(className, classes.button);
+  const buttonClasses = classNames(classes.button, className);
 
   return (
     <TodoLink href={href}>
-      <Button {...attrs} variant="contained" color={color} className={buttonClasses} fullWidth>
+      <Button {...attrs} color={color} className={buttonClasses} variant="contained" fullWidth>
         {children}
       </Button>
     </TodoLink>
@@ -19,15 +19,14 @@ const TodoButton = ({ href, color, children, className, ...attrs }) => {
 };
 
 TodoButton.propTypes = {
+  children: propTypes.node.isRequired,
   href: propTypes.string.isRequired,
   color: propTypes.string,
-  children: propTypes.node,
   className: propTypes.string,
 };
 
 TodoButton.defaultProps = {
   color: 'primary',
-  children: null,
   className: '',
 };
 

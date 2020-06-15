@@ -3,24 +3,24 @@ import propTypes from 'prop-types';
 import tasks from '../reducer/tasks';
 import useLocalStorageReducer from '../hooks/useLocalStorageReducer';
 
-const defaultTodos = [
+const defaultTasks = [
   { id: 1592065460597, text: 'Mow the lawn using goats' },
   { id: 1592065475243, text: 'Release lady bugs into garden' },
 ];
 
-export const TodosContext = createContext();
+export const TasksContext = createContext();
 export const DispatchContext = createContext();
 
-export const TodosProvider = ({ children }) => {
-  const [todos, dispatch] = useLocalStorageReducer('tasks', defaultTodos, tasks);
+export const TasksProvider = ({ children }) => {
+  const [taskList, dispatch] = useLocalStorageReducer('tasks', defaultTasks, tasks);
 
   return (
-    <TodosContext.Provider value={todos}>
+    <TasksContext.Provider value={taskList}>
       <DispatchContext.Provider value={dispatch}>{children}</DispatchContext.Provider>
-    </TodosContext.Provider>
+    </TasksContext.Provider>
   );
 };
 
-TodosProvider.propTypes = {
+TasksProvider.propTypes = {
   children: propTypes.node.isRequired,
 };

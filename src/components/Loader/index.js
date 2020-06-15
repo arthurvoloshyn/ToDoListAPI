@@ -9,7 +9,7 @@ const Loader = ({ size, color, className, ...attrs }) => {
   const loaderClasses = classNames(classes.loader, className);
 
   return (
-    <Grid container justify="center" alignItems="center" className={loaderClasses}>
+    <Grid className={loaderClasses} justify="center" alignItems="center" container>
       <CircularProgress {...attrs} size={size} color={color} />
     </Grid>
   );

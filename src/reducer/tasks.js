@@ -5,9 +5,9 @@ const tasks = (state, { type, text, id }) => {
     case ACTION_TYPES.ADD_TASK:
       return [...state, { id, text }];
     case ACTION_TYPES.REMOVE_TASK:
-      return state.filter(todo => todo.id !== id);
+      return state.filter(task => task.id !== id);
     case ACTION_TYPES.EDIT_TASK:
-      return state.map(todo => (todo.id === id ? { ...todo, text } : todo));
+      return state.map(task => (task.id === id ? { ...task, text } : task));
     default:
       return state;
   }

@@ -5,9 +5,9 @@ import classNames from 'classnames';
 import { Link } from '@material-ui/core';
 import useStyles from './styles';
 
-const TodoLink = ({ href, color, children, className, ...attrs }) => {
+const TodoLink = ({ children, href, color, className, ...attrs }) => {
   const classes = useStyles();
-  const linkClasses = classNames(className, classes.link);
+  const linkClasses = classNames(classes.link, className);
 
   return (
     <Link {...attrs} component={RouterLink} to={href} color={color} className={linkClasses}>
