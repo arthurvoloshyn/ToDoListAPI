@@ -1,8 +1,7 @@
 import React, { memo } from 'react';
-import { useRouteMatch } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 import propTypes from 'prop-types';
 import { ListItemText, ListItem } from '@material-ui/core';
-import TodoLink from '../TodoLink';
 import useStyles from './styles';
 
 const TodoListItem = ({ text, id }) => {
@@ -10,7 +9,7 @@ const TodoListItem = ({ text, id }) => {
   const classes = useStyles();
 
   return (
-    <ListItem className={classes.listItem} component={TodoLink} href={`${url}/${id}`}>
+    <ListItem className={classes.listItem} component={Link} to={`${url}/${id}`}>
       <ListItemText className={classes.listItemText}>{text}</ListItemText>
     </ListItem>
   );
