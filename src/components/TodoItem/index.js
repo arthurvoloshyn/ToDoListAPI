@@ -40,10 +40,10 @@ const TodoListItem = () => {
             </Typography>
           </Box>
           <Box className={classes.secondaryAction}>
-            <IconButton aria-label="Delete" onClick={onRemove}>
+            <IconButton aria-label="delete" onClick={onRemove}>
               <DeleteIcon />
             </IconButton>
-            <IconButton aria-label="Edit" onClick={onEdit}>
+            <IconButton aria-label="edit" onClick={onEdit}>
               <EditIcon />
             </IconButton>
           </Box>
