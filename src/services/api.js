@@ -1,64 +1,13 @@
 import PATHS from '../constants/paths';
+import helpers from '../utils/helpers';
 
 const api = {
-  getTasks: async () => {
-    try {
-      const response = await fetch(`${PATHS.BASE_PATH}${PATHS.TASKS_PATH}`, {
-        method: 'GET',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      return await response.json();
-    } catch (e) {
-      throw new Error(e);
-    }
-  },
-  removeTask: async id => {
-    try {
-      const response = await fetch(`${PATHS.BASE_PATH}${PATHS.TASKS_PATH}/${id}`, {
-        method: 'DELETE',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      return await response.json();
-    } catch (e) {
-      throw new Error(e);
-    }
-  },
-  addTask: async (id, text) => {
-    try {
-      const response = await fetch(`${PATHS.BASE_PATH}${PATHS.TASKS_PATH}`, {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ id, text }),
-      });
-      return await response.json();
-    } catch (e) {
-      throw new Error(e);
-    }
-  },
-  editTask: async (id, text) => {
-    try {
-      const response = await fetch(`${PATHS.BASE_PATH}${PATHS.TASKS_PATH}/${id}`, {
-        method: 'PUT',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ id, text }),
-      });
-      return await response.json();
-    } catch (e) {
-      throw new Error(e);
-    }
-  },
+  getTasks: () => helpers.getApiInstance('GET', `${PATHS.BASE_PATH}${PATHS.TASKS_PATH}`),
+  removeTask: id => helpers.getApiInstance('DELETE', `${PATHS.BASE_PATH}${PATHS.TASKS_PATH}/${id}`),
+  addTask: (id, text) =>
+    helpers.getApiInstance('POST', `${PATHS.BASE_PATH}${PATHS.TASKS_PATH}`, { id, text }),
+  editTask: (id, text) =>
+    helpers.getApiInstance('PUT', `${PATHS.BASE_PATH}${PATHS.TASKS_PATH}/${id}`, { id, text }),
 };
 
 export default api;
