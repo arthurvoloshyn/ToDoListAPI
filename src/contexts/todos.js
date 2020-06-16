@@ -1,7 +1,7 @@
 import React, { createContext } from 'react';
 import propTypes from 'prop-types';
-import { initState } from '../reducer/tasks';
 import useFetchTaskList from '../hooks/useFetchTaskList';
+import { initState } from '../reducer/tasks';
 import ErrorIndicator from '../components/ErrorIndicator';
 import TodoButton from '../components/TodoButton';
 import Loader from '../components/Loader';

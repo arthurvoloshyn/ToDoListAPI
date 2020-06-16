@@ -19,7 +19,6 @@ const ROUTES = [
   },
   {
     id: 'newTask',
-    exact: false,
     path: '/tasks/new',
     component: TodoForm,
   },
@@ -31,13 +30,11 @@ const ROUTES = [
   },
   {
     id: 'editTask',
-    exact: false,
     path: '/tasks/:id/edit',
     component: TodoForm,
   },
   {
     id: 'NoMatch',
-    exact: false,
     component: NoMatch,
   },
 ];

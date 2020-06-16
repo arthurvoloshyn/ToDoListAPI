@@ -3,8 +3,9 @@ import { useMediaQuery } from '@material-ui/core';
 
 const useBreakpoint = key => {
   const theme = useTheme();
+  const { breakpoints } = theme;
 
-  return useMediaQuery(theme.breakpoints.down(key));
+  return useMediaQuery(breakpoints.down(key));
 };
 
 export default useBreakpoint;

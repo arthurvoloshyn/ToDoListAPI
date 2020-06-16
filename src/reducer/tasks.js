@@ -6,7 +6,7 @@ export const initState = {
   tasks: [],
 };
 
-const tasks = (state = initState, { type, tasks, text, id }) => {
+const tasks = (state = initState, { type, tasks, id, text }) => {
   switch (type) {
     case ACTION_TYPES.FETCH_INIT:
       return {
