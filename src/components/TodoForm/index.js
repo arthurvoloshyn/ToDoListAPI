@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { Paper, TextField } from '@material-ui/core';
+import BREAKPOINTS from '../../constants/breakpoints';
 import helpers from '../../utils/helpers';
 import api from '../../services/api';
 import useInputState from '../../hooks/useInputState';
@@ -17,7 +18,7 @@ const TodoForm = () => {
   const dispatch = useContext(DispatchContext);
   const tasks = useContext(TasksContext);
   const [open, handleOpen, handleClose] = useDialog(false);
-  const fullScreen = useBreakpoint('sm');
+  const fullScreen = useBreakpoint(BREAKPOINTS.SM);
   const task = helpers.getDataById(tasks, id);
   const [value, handleChange, reset] = useInputState(task.text);
   const classes = useStyles();

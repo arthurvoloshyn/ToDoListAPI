@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useHistory, useRouteMatch, useParams } from 'react-router-dom';
 import { Paper, Typography, Box, IconButton, Container } from '@material-ui/core';
 import { Delete as DeleteIcon, Edit as EditIcon } from '@material-ui/icons';
+import BREAKPOINTS from '../../constants/breakpoints';
 import helpers from '../../utils/helpers';
 import api from '../../services/api';
 import useDialog from '../../hooks/useDialog';
@@ -20,7 +21,7 @@ const TodoListItem = () => {
   const dispatch = useContext(DispatchContext);
   const tasks = useContext(TasksContext);
   const [open, handleOpen, handleClose] = useDialog(false);
-  const fullScreen = useBreakpoint('sm');
+  const fullScreen = useBreakpoint(BREAKPOINTS.SM);
   const classes = useStyles();
 
   const task = helpers.getDataById(tasks, id);
