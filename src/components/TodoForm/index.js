@@ -30,7 +30,7 @@ const TodoForm = () => {
 
     const taskAction = task.id ? editTask : addTask;
     const taskId = task.id || `${helpers.getNextItemIdInArr(tasks)}`;
-    const apiMethod = api[taskAction.name];
+    const apiMethod = task.id ? api.changeTask : api.createTask;
 
     try {
       await apiMethod(taskId, value);
