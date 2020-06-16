@@ -15,19 +15,19 @@ const TodoApp = ({ children }) => {
   const isTaskLocation = pathname.includes('tasks');
 
   return (
-    <Paper elevation={0} className={classes.paper}>
-      <AppBar color="primary" position="static" className={classes.appBar}>
+    <Paper className={classes.paper} elevation={0}>
+      <AppBar className={classes.appBar} color="primary" position="static">
         <Toolbar>
           <TodoLink href="/">ToDo List API</TodoLink>
         </Toolbar>
       </AppBar>
-      <Grid container justify="center" className={classes.grid}>
-        <Grid item xs={11} md={8} lg={4}>
+      <Grid className={classes.grid} justify="center" container>
+        <Grid xs={11} md={8} lg={4} item>
           <TasksProvider>{children}</TasksProvider>
         </Grid>
       </Grid>
       {isTaskLocation && (
-        <Fab color="primary" aria-label="back" className={classes.fab} onClick={history.goBack}>
+        <Fab className={classes.fab} onClick={history.goBack} color="primary" aria-label="back">
           <ArrowBackIcon />
         </Fab>
       )}
