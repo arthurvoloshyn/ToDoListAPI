@@ -1,11 +1,16 @@
 const helpers = {
   getDataById: (dataArray, id) => dataArray.filter(data => data.id === id)[0] || {},
-  getNextItemIdInArr: arr => +arr[arr.length - 1].id + 1,
 
   sortById: data => data.sort((a, b) => a.id - b.id),
 
   addToLocalStorage: (label, data) => window.localStorage.setItem(label, JSON.stringify(data)),
   getFromLocalStorage: label => window.localStorage.getItem(label),
+
+  getNextItemIdInArr: arr => {
+    const lastItemInArr = arr.slice(-1)[0] || {};
+    const { id = 0 } = lastItemInArr;
+    return +id + 1;
+  },
 
   getApiInstance: async (method, url, data) => {
     let init = { method };
