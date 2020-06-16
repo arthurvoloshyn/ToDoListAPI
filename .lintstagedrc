@@ -3,11 +3,11 @@
     "prettier --write",
     "git add"
   ],
-  "**/*.+(js|jsx|ts|tsx)": [
+  "**/*.+(js|jsx)": [
     "eslint --fix --max-warnings=0",
     "git add"
   ],
-  "**/*.+(css|scss|sass|less)": [
+  "**/*.+(css)": [
     "prettier --parser css --write",
     "stylelint --fix --syntax css --max-warnings=0",
     "git add"

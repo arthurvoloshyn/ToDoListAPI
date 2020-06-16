@@ -59,9 +59,9 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "lint:styles": "stylelint --fix --syntax css src/**/*.css",
-    "lint": "eslint --ext .js --ext .jsx --fix ./src",
+    "lint": "eslint --ext .js,.jsx --fix ./src",
     "format": "prettier \"src/**/*.{js,jsx,yml,yaml,ts,tsx,md,graphql,mdx}\" --write",
-    "format:styles": "prettier \"src/**/*.{scss,sass,less,css}\" --parser css --write",
+    "format:styles": "prettier \"src/**/*.css\" --parser css --write",
     "precommit": "lint-staged",
     "validate": "npm run lint && npm run lint:styles && npm run build"
   },
