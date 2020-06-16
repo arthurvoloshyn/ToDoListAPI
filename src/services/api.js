@@ -3,7 +3,13 @@ import PATHS from '../constants/paths';
 const api = {
   getTasks: async () => {
     try {
-      const response = await fetch(`${PATHS.BASE_PATH}${PATHS.TASKS_PATH}`);
+      const response = await fetch(`${PATHS.BASE_PATH}${PATHS.TASKS_PATH}`, {
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
       return await response.json();
     } catch (e) {
       throw new Error(e);
@@ -13,6 +19,10 @@ const api = {
     try {
       const response = await fetch(`${PATHS.BASE_PATH}${PATHS.TASKS_PATH}/${id}`, {
         method: 'DELETE',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
       });
       return await response.json();
     } catch (e) {
