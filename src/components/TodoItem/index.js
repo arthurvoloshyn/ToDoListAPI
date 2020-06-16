@@ -4,10 +4,10 @@ import { Paper, Typography, Box, IconButton, Container } from '@material-ui/core
 import { Delete as DeleteIcon, Edit as EditIcon } from '@material-ui/icons';
 import helpers from '../../utils/helpers';
 import api from '../../services/api';
-import { DispatchContext, TasksContext } from '../../contexts/todos';
-import { removeTask } from '../../actions/actionCreator';
 import useDialog from '../../hooks/useDialog';
 import useBreakpoint from '../../hooks/useBreakpoint';
+import { DispatchContext, TasksContext } from '../../contexts/todos';
+import { removeTask } from '../../actions/actionCreator';
 import TodoLink from '../TodoLink';
 import TodoButton from '../TodoButton';
 import TodoDialog from '../TodoDialog';
@@ -29,7 +29,7 @@ const TodoListItem = () => {
     e.preventDefault();
 
     try {
-      await api.deleteTask(task.id);
+      await api.removeTask(task.id);
       dispatch(removeTask(task.id));
       history.push('/tasks');
     } catch {
