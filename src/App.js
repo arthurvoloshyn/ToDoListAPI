@@ -1,5 +1,5 @@
 import React, { StrictMode } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import ROUTES from './constants/routes';
 import TodoApp from './components/TodoApp';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -7,7 +7,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 const App = () => (
   <StrictMode>
     <ErrorBoundary>
-      <Router basename="/ToDoListAPI/">
+      <Router>
         <TodoApp>
           <Switch>
             {ROUTES.map(({ id, exact, path, component: Component }) => (
