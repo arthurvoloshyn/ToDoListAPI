@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import ErrorIndicator from '../ErrorIndicator';
+import TodoButton from '../TodoButton';
 
 class ErrorBoundary extends Component {
   state = {
@@ -15,11 +16,21 @@ class ErrorBoundary extends Component {
     children: propTypes.node.isRequired,
   };
 
+  reload = () => window.location.reload();
+
   render() {
     const { isError } = this.state;
     const { children } = this.props;
 
-    return isError ? <ErrorIndicator /> : children;
+    if (isError) {
+      return (
+        <ErrorIndicator>
+          <TodoButton onClick={this.reload}>Reload the page</TodoButton>
+        </ErrorIndicator>
+      );
+    }
+
+    return children;
   }
 }
 
