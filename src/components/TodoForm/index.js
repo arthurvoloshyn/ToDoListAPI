@@ -16,11 +16,12 @@ const TodoForm = () => {
   const { id } = useParams();
   const dispatch = useContext(DispatchContext);
   const tasks = useContext(TasksContext);
-  const task = helpers.getDataById(tasks, id);
-  const [value, handleChange, reset] = useInputState(task.text);
   const [open, handleOpen, handleClose] = useDialog(false);
   const fullScreen = useBreakpoint('sm');
+  const task = helpers.getDataById(tasks, id);
+  const [value, handleChange, reset] = useInputState(task.text);
   const classes = useStyles();
+
   const taskLabel = task.id ? 'Edit the todo' : 'Add a new todo';
 
   const onSubmit = async e => {
