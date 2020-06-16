@@ -27,8 +27,7 @@ const TodoForm = () => {
     e.preventDefault();
 
     const taskAction = task.id ? editTask : addTask;
-    const newTaskId = helpers.getNextItemIdInArr(tasks);
-    const taskId = task.id || `${newTaskId}`;
+    const taskId = task.id || `${helpers.getNextItemIdInArr(tasks)}`;
     const apiMethod = api[taskAction.name];
 
     try {
