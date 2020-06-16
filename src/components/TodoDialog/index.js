@@ -39,7 +39,7 @@ TodoDialog.propTypes = {
 
 TodoDialog.defaultProps = {
   children: null,
-  title: 'TodoDialog title',
+  title: 'Dialog title',
   fullScreen: false,
   open: false,
   handleClose: () => {},

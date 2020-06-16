@@ -7,7 +7,7 @@ import api from '../../services/api';
 import useInputState from '../../hooks/useInputState';
 import useDialog from '../../hooks/useDialog';
 import useBreakpoint from '../../hooks/useBreakpoint';
-import { DispatchContext, TasksContext } from '../../contexts/todos';
+import { DispatchContext, TasksContext } from '../../contexts/tasks';
 import { addTask, editTask } from '../../actions/actionCreator';
 import TodoDialog from '../TodoDialog';
 import useStyles from './styles';

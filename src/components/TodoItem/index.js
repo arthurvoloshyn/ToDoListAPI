@@ -7,7 +7,7 @@ import helpers from '../../utils/helpers';
 import api from '../../services/api';
 import useDialog from '../../hooks/useDialog';
 import useBreakpoint from '../../hooks/useBreakpoint';
-import { DispatchContext, TasksContext } from '../../contexts/todos';
+import { DispatchContext, TasksContext } from '../../contexts/tasks';
 import { removeTask } from '../../actions/actionCreator';
 import TodoLink from '../TodoLink';
 import TodoButton from '../TodoButton';

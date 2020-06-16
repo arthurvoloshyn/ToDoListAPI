@@ -1,6 +1,6 @@
 import React, { useContext, Fragment } from 'react';
 import { List, Divider } from '@material-ui/core';
-import { TasksContext } from '../../contexts/todos';
+import { TasksContext } from '../../contexts/tasks';
 import TodoListItem from '../TodoListItem';
 
 const TodoList = () => {

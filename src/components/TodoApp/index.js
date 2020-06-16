@@ -3,7 +3,7 @@ import { useLocation, useHistory } from 'react-router-dom';
 import propTypes from 'prop-types';
 import { Paper, AppBar, Toolbar, Grid, Fab } from '@material-ui/core';
 import { ArrowBack as ArrowBackIcon } from '@material-ui/icons';
-import { TasksProvider } from '../../contexts/todos';
+import { TasksProvider } from '../../contexts/tasks';
 import TodoLink from '../TodoLink';
 import useStyles from './styles';
 
