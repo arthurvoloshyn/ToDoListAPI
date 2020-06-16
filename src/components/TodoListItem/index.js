@@ -9,9 +9,11 @@ const TodoListItem = ({ text, id }) => {
   const classes = useStyles();
 
   return (
-    <ListItem className={classes.listItem} component={Link} to={`${url}/${id}`}>
-      <ListItemText className={classes.listItemText}>{text}</ListItemText>
-    </ListItem>
+    <li>
+      <ListItem className={classes.listItem} component={Link} to={`${url}/${id}`} button>
+        <ListItemText className={classes.listItemText}>{text}</ListItemText>
+      </ListItem>
+    </li>
   );
 };
 
