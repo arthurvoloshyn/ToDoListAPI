@@ -52,8 +52,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "test:watch": "npm test -- --watchAll --verbose",
+    "test:coverage": "npm test -- --bail --coverage --watchAll",
     "deploy": "gh-pages -d build",
     "lint:styles": "stylelint --fix --syntax css src/**/*.css",
     "lint": "eslint --ext .js --ext .jsx --fix ./src",
