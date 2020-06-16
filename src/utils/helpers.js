@@ -1,5 +1,5 @@
 const helpers = {
-  getDataById: (dataArray, id) => dataArray.filter(data => data.id === +id)[0] || {},
+  getDataById: (dataArray, id) => dataArray.filter(data => data.id === id)[0] || {},
 
   sortById: data => data.sort((a, b) => a.id - b.id),
 

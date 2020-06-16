@@ -21,7 +21,7 @@ const TodoForm = () => {
     e.preventDefault();
 
     const taskAction = task.id ? editTask : addTask;
-    const taskId = task.id || new Date().getTime();
+    const taskId = task.id || `${new Date().getTime()}`;
 
     dispatch(taskAction(taskId, value));
     reset();

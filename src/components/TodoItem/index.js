@@ -3,10 +3,14 @@ import { useHistory, useRouteMatch, useParams } from 'react-router-dom';
 import { Paper, Typography, Box, IconButton, Container } from '@material-ui/core';
 import { Delete as DeleteIcon, Edit as EditIcon } from '@material-ui/icons';
 import helpers from '../../utils/helpers';
+import api from '../../services/api';
 import { DispatchContext, TasksContext } from '../../contexts/todos';
 import { removeTask } from '../../actions/actionCreator';
+import useDialog from '../../hooks/useDialog';
+import useBreakpoint from '../../hooks/useBreakpoint';
 import TodoLink from '../TodoLink';
 import TodoButton from '../TodoButton';
+import TodoDialog from '../TodoDialog';
 import useStyles from './styles';
 
 const TodoListItem = () => {
@@ -15,14 +19,22 @@ const TodoListItem = () => {
   const { id } = useParams();
   const dispatch = useContext(DispatchContext);
   const tasks = useContext(TasksContext);
+  const [open, handleOpen, handleClose] = useDialog(false);
+  const fullScreen = useBreakpoint('sm');
   const classes = useStyles();
 
   const task = helpers.getDataById(tasks, id);
 
-  const onRemove = e => {
+  const onRemove = async e => {
     e.preventDefault();
-    dispatch(removeTask(task.id));
-    history.push('/tasks');
+
+    try {
+      await api.deleteTask(task.id);
+      dispatch(removeTask(task.id));
+      history.push('/tasks');
+    } catch {
+      handleOpen();
+    }
   };
 
   const onEdit = e => {
@@ -52,6 +64,14 @@ const TodoListItem = () => {
           </Box>
         </Container>
       </Paper>
+      <TodoDialog
+        open={open}
+        handleClose={handleClose}
+        fullScreen={fullScreen}
+        title="Something went wrong..."
+      >
+        Error, please try again later.
+      </TodoDialog>
     </>
   );
 };
