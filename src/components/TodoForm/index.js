@@ -29,14 +29,15 @@ const TodoForm = () => {
     e.preventDefault();
 
     const taskAction = task.id ? editTask : addTask;
-    const taskId = task.id || `${helpers.getNextItemIdInArr(tasks)}`;
     const apiMethod = task.id ? api.changeTask : api.createTask;
 
     try {
-      await apiMethod(taskId, value);
-      dispatch(taskAction(taskId, value));
+      const response = await apiMethod(value, task.id);
+      const { id, text } = response;
+
+      dispatch(taskAction(id, text));
       reset();
-      history.push(`/tasks/${taskId}`);
+      history.push(`/tasks/${id}`);
     } catch {
       handleOpen();
     }

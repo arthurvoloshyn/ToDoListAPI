@@ -30,8 +30,10 @@ const TodoListItem = () => {
     e.preventDefault();
 
     try {
-      await api.deleteTask(task.id);
-      dispatch(removeTask(task.id));
+      const response = await api.deleteTask(task.id);
+      const { id } = response;
+
+      dispatch(removeTask(id));
       history.push('/tasks');
     } catch {
       handleOpen();
