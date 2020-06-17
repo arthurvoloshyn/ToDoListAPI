@@ -18,7 +18,7 @@ const TodoForm = () => {
   const dispatch = useContext(DispatchContext);
   const tasks = useContext(TasksContext);
   const [open, handleOpen, handleClose] = useDialog(false);
-  const fullScreen = useBreakpoint(BREAKPOINTS.SM);
+  const fullScreen = useBreakpoint(BREAKPOINTS.SMALL);
   const task = helpers.getDataById(tasks, id);
   const [value, handleChange, reset] = useInputState(task.text);
   const classes = useStyles();

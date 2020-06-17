@@ -21,7 +21,7 @@ const TodoListItem = () => {
   const dispatch = useContext(DispatchContext);
   const tasks = useContext(TasksContext);
   const [open, handleOpen, handleClose] = useDialog(false);
-  const fullScreen = useBreakpoint(BREAKPOINTS.SM);
+  const fullScreen = useBreakpoint(BREAKPOINTS.SMALL);
   const classes = useStyles();
 
   const task = helpers.getDataById(tasks, id);
