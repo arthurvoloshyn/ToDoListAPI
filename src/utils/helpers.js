@@ -6,12 +6,6 @@ const helpers = {
   addToLocalStorage: (label, data) => window.localStorage.setItem(label, JSON.stringify(data)),
   getFromLocalStorage: label => window.localStorage.getItem(label),
 
-  getNextItemIdInArr: arr => {
-    const lastItemInArr = arr.slice(-1)[0] || {};
-    const { id = 0 } = lastItemInArr;
-    return +id + 1;
-  },
-
   getApiInstance: async (method, url, data) => {
     let init = { method };
     const initWithData = {
