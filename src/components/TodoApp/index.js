@@ -5,6 +5,7 @@ import { Paper, AppBar, Toolbar, Grid, Fab } from '@material-ui/core';
 import { ArrowBack as ArrowBackIcon } from '@material-ui/icons';
 import { TasksProvider } from '../../contexts/tasks';
 import TodoLink from '../TodoLink';
+import TodoTooltip from '../TodoTooltip';
 import useStyles from './styles';
 
 const TodoApp = ({ children }) => {
@@ -27,9 +28,11 @@ const TodoApp = ({ children }) => {
         </Grid>
       </Grid>
       {isTaskLocation && (
-        <Fab className={classes.fab} onClick={history.goBack} color="primary" aria-label="back">
-          <ArrowBackIcon />
-        </Fab>
+        <TodoTooltip title="Go back" aria-label="back">
+          <Fab className={classes.fab} onClick={history.goBack} color="primary">
+            <ArrowBackIcon />
+          </Fab>
+        </TodoTooltip>
       )}
     </Paper>
   );

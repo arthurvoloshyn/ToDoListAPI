@@ -1,7 +1,7 @@
 const helpers = {
   getDataById: (dataArray, id) => dataArray.filter(data => data.id === id)[0] || {},
 
-  sortById: data => data.sort((a, b) => a.id - b.id),
+  sortById: (data = []) => data.sort((a, b) => a.id - b.id),
 
   addToLocalStorage: (label, data) => window.localStorage.setItem(label, JSON.stringify(data)),
   getFromLocalStorage: label => window.localStorage.getItem(label),

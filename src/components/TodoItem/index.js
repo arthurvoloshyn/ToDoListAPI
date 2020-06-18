@@ -12,6 +12,7 @@ import { removeTask } from '../../actions/actionCreator';
 import TodoLink from '../TodoLink';
 import TodoButton from '../TodoButton';
 import TodoDialog from '../TodoDialog';
+import TodoTooltip from '../TodoTooltip';
 import useStyles from './styles';
 
 const TodoListItem = () => {
@@ -58,12 +59,16 @@ const TodoListItem = () => {
             </Typography>
           </Box>
           <Box className={classes.secondaryAction}>
-            <IconButton onClick={onRemove} aria-label="delete">
-              <DeleteIcon />
-            </IconButton>
-            <IconButton onClick={onEdit} aria-label="edit">
-              <EditIcon />
-            </IconButton>
+            <TodoTooltip title="Delete" aria-label="delete">
+              <IconButton onClick={onRemove}>
+                <DeleteIcon />
+              </IconButton>
+            </TodoTooltip>
+            <TodoTooltip title="Edit" aria-label="edit">
+              <IconButton onClick={onEdit}>
+                <EditIcon />
+              </IconButton>
+            </TodoTooltip>
           </Box>
         </Container>
       </Paper>

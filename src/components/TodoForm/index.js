@@ -32,7 +32,7 @@ const TodoForm = () => {
     const apiMethod = task.id ? api.changeTask : api.createTask;
 
     try {
-      const response = await apiMethod(value, task.id);
+      const response = await apiMethod(task.id, value);
       const { id, text } = response;
 
       dispatch(taskAction(id, text));

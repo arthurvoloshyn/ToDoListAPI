@@ -13,7 +13,7 @@ export const DispatchContext = createContext(defaultDispatch);
 
 export const TasksProvider = ({ children }) => {
   const [state, dispatch, fetchData] = useFetchTaskList();
-  const { isLoading, isError, tasks } = state;
+  const { tasks, isLoading, isError } = state;
 
   if (isError) {
     return (
