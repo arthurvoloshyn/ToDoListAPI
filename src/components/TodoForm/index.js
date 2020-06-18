@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import { Paper, TextField } from '@material-ui/core';
+import { Paper, TextField, InputLabel } from '@material-ui/core';
 import BREAKPOINTS from '../../constants/breakpoints';
 import helpers from '../../utils/helpers';
 import api from '../../services/api';
@@ -47,10 +47,13 @@ const TodoForm = () => {
     <>
       <Paper className={classes.paper}>
         <form onSubmit={onSubmit}>
+          <InputLabel htmlFor="text" shrink>
+            {taskLabel}
+          </InputLabel>
           <TextField
             value={value}
             onChange={handleChange}
-            label={taskLabel}
+            id="text"
             margin="normal"
             fullWidth
             autoFocus
