@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import propTypes from 'prop-types';
-import { Paper, AppBar, Toolbar, Grid, Fab } from '@material-ui/core';
+import { Paper, AppBar, Toolbar, Grid, Fab, Tooltip, Zoom } from '@material-ui/core';
 import { ArrowBack as ArrowBackIcon } from '@material-ui/icons';
 import { TasksProvider } from '../../contexts/tasks';
 import TodoLink from '../TodoLink';
@@ -27,9 +27,11 @@ const TodoApp = ({ children }) => {
         </Grid>
       </Grid>
       {isTaskLocation && (
-        <Fab className={classes.fab} onClick={history.goBack} color="primary" aria-label="back">
-          <ArrowBackIcon />
-        </Fab>
+        <Tooltip TransitionComponent={Zoom} title="Go back" aria-label="back" arrow>
+          <Fab className={classes.fab} onClick={history.goBack} color="primary">
+            <ArrowBackIcon />
+          </Fab>
+        </Tooltip>
       )}
     </Paper>
   );
