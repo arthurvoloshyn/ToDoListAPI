@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useHistory, useRouteMatch, useParams } from 'react-router-dom';
-import { Paper, Typography, Box, IconButton, Container, Zoom, Tooltip } from '@material-ui/core';
+import { Paper, Typography, Box, IconButton, Container } from '@material-ui/core';
 import { Delete as DeleteIcon, Edit as EditIcon } from '@material-ui/icons';
 import BREAKPOINTS from '../../constants/breakpoints';
 import helpers from '../../utils/helpers';
@@ -12,6 +12,7 @@ import { removeTask } from '../../actions/actionCreator';
 import TodoLink from '../TodoLink';
 import TodoButton from '../TodoButton';
 import TodoDialog from '../TodoDialog';
+import TodoTooltip from '../TodoTooltip';
 import useStyles from './styles';
 
 const TodoListItem = () => {
@@ -58,16 +59,16 @@ const TodoListItem = () => {
             </Typography>
           </Box>
           <Box className={classes.secondaryAction}>
-            <Tooltip TransitionComponent={Zoom} title="Delete" aria-label="delete" arrow>
+            <TodoTooltip title="Delete" aria-label="delete">
               <IconButton onClick={onRemove}>
                 <DeleteIcon />
               </IconButton>
-            </Tooltip>
-            <Tooltip TransitionComponent={Zoom} title="Edit" aria-label="edit" arrow>
+            </TodoTooltip>
+            <TodoTooltip title="Edit" aria-label="edit">
               <IconButton onClick={onEdit}>
                 <EditIcon />
               </IconButton>
-            </Tooltip>
+            </TodoTooltip>
           </Box>
         </Container>
       </Paper>

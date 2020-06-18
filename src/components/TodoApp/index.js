@@ -1,10 +1,11 @@
 import React from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import propTypes from 'prop-types';
-import { Paper, AppBar, Toolbar, Grid, Fab, Tooltip, Zoom } from '@material-ui/core';
+import { Paper, AppBar, Toolbar, Grid, Fab } from '@material-ui/core';
 import { ArrowBack as ArrowBackIcon } from '@material-ui/icons';
 import { TasksProvider } from '../../contexts/tasks';
 import TodoLink from '../TodoLink';
+import TodoTooltip from '../TodoTooltip';
 import useStyles from './styles';
 
 const TodoApp = ({ children }) => {
@@ -27,11 +28,11 @@ const TodoApp = ({ children }) => {
         </Grid>
       </Grid>
       {isTaskLocation && (
-        <Tooltip TransitionComponent={Zoom} title="Go back" aria-label="back" arrow>
+        <TodoTooltip title="Go back" aria-label="back">
           <Fab className={classes.fab} onClick={history.goBack} color="primary">
             <ArrowBackIcon />
           </Fab>
-        </Tooltip>
+        </TodoTooltip>
       )}
     </Paper>
   );
