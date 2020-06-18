@@ -4,9 +4,9 @@ import helpers from '../utils/helpers';
 const api = {
   getTasks: () => helpers.getApiInstance('GET', `${PATHS.BASE_PATH}${PATHS.TASKS_PATH}`),
   deleteTask: id => helpers.getApiInstance('DELETE', `${PATHS.BASE_PATH}${PATHS.TASKS_PATH}/${id}`),
-  createTask: text =>
+  createTask: (_, text) =>
     helpers.getApiInstance('POST', `${PATHS.BASE_PATH}${PATHS.TASKS_PATH}`, { text }),
-  changeTask: (text, id) =>
+  changeTask: (id, text) =>
     helpers.getApiInstance('PUT', `${PATHS.BASE_PATH}${PATHS.TASKS_PATH}/${id}`, { id, text }),
 };
 
