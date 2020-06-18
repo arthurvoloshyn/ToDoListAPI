@@ -1,11 +1,11 @@
 import React from 'react';
-import TodoLink from '../TodoLink';
+import { Link } from 'react-router-dom';
 import TodoButton from '../TodoButton';
 
 const Home = () => (
-  <TodoLink href="/tasks">
-    <TodoButton>Go to the todo list</TodoButton>
-  </TodoLink>
+  <TodoButton component={Link} to="/tasks">
+    Go to the todo list
+  </TodoButton>
 );
 
 export default Home;

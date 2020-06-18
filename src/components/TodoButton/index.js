@@ -35,7 +35,7 @@ TodoButton.defaultProps = {
   color: 'primary',
   className: '',
   onClick: () => {},
-  component: 'div',
+  component: 'button',
 };
 
 export default TodoButton;
