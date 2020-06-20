@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const styles = {
   listItem: {
-    height: '64px',
+    height: '4rem',
   },
   listItemText: {
     color: '#000',
