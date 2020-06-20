@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useHistory, useRouteMatch, useParams } from 'react-router-dom';
+import { Link, useHistory, useRouteMatch, useParams } from 'react-router-dom';
 import { Paper, Typography, Box, IconButton, Container } from '@material-ui/core';
 import { Delete as DeleteIcon, Edit as EditIcon } from '@material-ui/icons';
 import BREAKPOINTS from '../../constants/breakpoints';
@@ -9,7 +9,6 @@ import useDialog from '../../hooks/useDialog';
 import useBreakpoint from '../../hooks/useBreakpoint';
 import { DispatchContext, TasksContext } from '../../contexts/tasks';
 import { removeTask } from '../../actions/actionCreator';
-import TodoLink from '../TodoLink';
 import TodoButton from '../TodoButton';
 import TodoDialog from '../TodoDialog';
 import TodoTooltip from '../TodoTooltip';
@@ -48,9 +47,9 @@ const TodoListItem = () => {
 
   return (
     <>
-      <TodoLink href="/tasks">
-        <TodoButton>Go back to the todo list</TodoButton>
-      </TodoLink>
+      <TodoButton component={Link} to="/tasks">
+        Go back to the todo list
+      </TodoButton>
       <Paper>
         <Container className={classes.container}>
           <Box className={classes.textBox}>

@@ -1,9 +1,15 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const styles = {
-  paper: {
-    margin: '1rem 0',
-    padding: '1rem 1rem 0',
+  box: {
+    padding: '1rem',
+    textAlign: 'center',
+  },
+  text: {
+    fontSize: '1.5rem',
+  },
+  icon: {
+    fontSize: '7.5rem',
   },
 };
 

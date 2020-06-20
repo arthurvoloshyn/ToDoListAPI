@@ -1,7 +1,6 @@
 import React from 'react';
-import { useRouteMatch } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 import { Paper } from '@material-ui/core';
-import TodoLink from '../TodoLink';
 import TodoButton from '../TodoButton';
 import TodoList from '../TodoList';
 
@@ -10,9 +9,9 @@ const Todo = () => {
 
   return (
     <>
-      <TodoLink href={`${url}/new`}>
-        <TodoButton>Create a new todo</TodoButton>
-      </TodoLink>
+      <TodoButton component={Link} to={`${url}/new`}>
+        Create a new todo
+      </TodoButton>
       <Paper>
         <TodoList />
       </Paper>
