@@ -2,12 +2,12 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const styles = {
   container: {
-    height: '64px',
+    height: '4rem',
     display: 'flex',
     position: 'relative',
     textAlign: 'left',
     alignItems: 'center',
-    padding: '8px 16px',
+    padding: '0.5rem 1rem',
     justifyContent: 'flex-start',
     textDecoration: 'none',
     backgroundColor: '#fff',
@@ -15,7 +15,7 @@ const styles = {
   textBox: {
     flex: '1 1 auto',
     minWidth: 0,
-    margin: '4px 0',
+    margin: '0.25rem 0',
   },
   typography: {
     color: '#000',
@@ -26,7 +26,7 @@ const styles = {
   },
   secondaryAction: {
     top: '50%',
-    right: '16px',
+    right: '1rem',
     position: 'absolute',
     transform: 'translateY(-50%)',
   },

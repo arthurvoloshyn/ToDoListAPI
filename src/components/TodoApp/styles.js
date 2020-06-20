@@ -8,7 +8,7 @@ const styles = {
     backgroundColor: '#fafafa',
   },
   appBar: {
-    height: '64px',
+    height: '4rem',
   },
   grid: {
     margin: '1rem 0',
