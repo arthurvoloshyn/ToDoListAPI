@@ -1,10 +1,12 @@
+const { setItem, getItem } = window.localStorage;
+
 const helpers = {
   getDataById: (dataArray, id) => dataArray.filter(data => data.id === id)[0] || {},
 
   sortById: (data = []) => data.sort((a, b) => a.id - b.id),
 
-  addToLocalStorage: (label, data) => window.localStorage.setItem(label, JSON.stringify(data)),
-  getFromLocalStorage: label => window.localStorage.getItem(label),
+  addToLocalStorage: (label, data) => setItem(label, JSON.stringify(data)),
+  getFromLocalStorage: label => getItem(label),
 
   getApiInstance: async (method, url, data) => {
     let init = { method };
