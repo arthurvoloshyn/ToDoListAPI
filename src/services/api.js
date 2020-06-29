@@ -7,7 +7,7 @@ const api = {
   createTask: (_, text) =>
     helpers.getApiInstance('POST', `${PATHS.BASE_PATH}${PATHS.TASKS_PATH}`, { text }),
   changeTask: (id, text) =>
-    helpers.getApiInstance('PUT', `${PATHS.BASE_PATH}${PATHS.TASKS_PATH}/${id}`, { id, text }),
+    helpers.getApiInstance('PUT', `${PATHS.BASE_PATH}${PATHS.TASKS_PATH}/${id}`, { text }),
 };
 
 export default api;
