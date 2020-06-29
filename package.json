@@ -16,7 +16,38 @@
   "devDependencies": {
     "@material-ui/core": "^4.10.1",
     "@material-ui/icons": "^4.9.1",
-    "classnames": "^2.2.6"
+    "classnames": "^2.2.6",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-react-app": "^5.1.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-flowtype": "^3.13.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jest": "^23.1.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^3.0.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
+    "stylelint": "^12.0.0",
+    "stylelint-config-prettier": "^8.0.0",
+    "stylelint-config-primer": "^9.0.0",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-recommended-scss": "^4.1.0",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-order": "^3.1.1",
+    "stylelint-prettier": "^1.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
   },
   "scripts": {
     "start": "react-scripts start",
@@ -24,7 +55,15 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "test:watch": "npm test -- --watchAll --verbose",
-    "test:coverage": "npm test -- --bail --coverage --watchAll"
+    "test:coverage": "npm test -- --bail --coverage --watchAll",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "lint:styles": "stylelint --fix --syntax css src/**/*.css",
+    "lint": "eslint --ext .js,.jsx --fix ./src",
+    "format": "prettier \"src/**/*.{js,jsx,yml,yaml,ts,tsx,md,graphql,mdx}\" --write",
+    "format:styles": "prettier \"src/**/*.css\" --parser css --write",
+    "precommit": "lint-staged",
+    "validate": "npm run lint && npm run lint:styles && npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
