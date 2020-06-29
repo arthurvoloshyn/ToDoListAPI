@@ -29,7 +29,7 @@ const TodoForm = () => {
     e.preventDefault();
 
     const taskAction = task.id ? editTask : addTask;
-    const apiMethod = task.id ? api.changeTask : api.createTask;
+    const apiMethod = api[taskAction.name];
 
     try {
       const response = await apiMethod(task.id, value);
